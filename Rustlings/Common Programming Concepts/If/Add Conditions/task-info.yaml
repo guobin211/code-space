@@ -3,7 +3,7 @@ files:
 - name: src/lib.rs
   visible: true
   placeholders:
-  - offset: 122
+  - offset: 70
     length: 71
     placeholder_text: /* Something goes here */
     initial_state:
@@ -11,9 +11,9 @@ files:
       offset: 96
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: /woAluQ8/g4A/EeI65UruezyPQKTHY6lCCJJJhmsYtA=
-  - offset: 195
+  - offset: 143
     length: 16
     placeholder_text: /* Something goes here */
     initial_state:
@@ -21,7 +21,7 @@ files:
       offset: 132
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: u2Fgqd6m2BhHPcsL1YboAOtbMHHjAID1n+dQDqqsSt7aJ5I+mT/z6y8ehFEVcwsc
   encrypted_text: /WnNls5KRG1zsc31LSAwl8c2pRqNuyati0LjTywdRTUixz7Yf8Yo/KPMWzGKsVfdPz3g5tfmDZce7LTabOT8vNaLOhI8uJXsLqzbVVTVyffJqej8TuDl8/t8eKL+5je2dKLAnZ+j8fbZDzEt9hAjwgxN60HLD6UaqBxukDe9fuCXjunjphTPjIGz5Mi0MGKnvYuIodmpEWqceSbnRXk/PvO9gxJvpPVHWT5Hk2QPfvM=
   learner_created: false
@@ -37,10 +37,8 @@ files:
   visible: false
   encrypted_text: lo2iaaeo/gUrY0TqRXBe9FJe7GZpsnlN1FxLghgHntxNF7rXjVTJPQ8lnQNZSebP25YD28ZwlbGLGzOB87aQmJ1ymMQ1p3VEUArfFrCGIqYRqYbnllWoc4zT8iIIUxUzSsPHvCCAX8an1yvvQ5Gmgw3EyNukIYsc/b5gmqlijmDC/clFu78Rh/irCRja1jA36R50E2DZ8fdpnQoB6l1oqjb0TIb2YTVbtFFfqbLuyqxkzhZ5gsqhmEYXXuPCGE7d2yIGHxElDyp7kF2DUhwTGptRY9wWV8K+CVFVgdfi42PHb90JxLfix3YmEsOwh9V/StMLeri8d9mI7wXBI2P6FXjBwAdN94Y1ONiQGd5/rjE=
   learner_created: false
-status: Failed
+status: Solved
 feedback:
-  message: Incorrect
-  time: Wed, 23 Jun 2021 06:39:54 UTC
-  expected: bar
-  actual: fuzz
+  message: Congratulations!
+  time: Sun, 27 Jun 2021 03:44:13 UTC
 record: -1

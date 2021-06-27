@@ -1,12 +1,9 @@
 pub fn fizz_if_foo(fizzish: &str) -> &str {
     if fizzish == "fizz" {
-        println!("bar");
-        "fuzz"
-    } else if fizzish == "baz" {
-        println!("bar");
-        "baz"
+        "foo"
+    } else if fizzish == "fuzz" {
+        "bar"
     } else {
-        fizzish
+        "baz"
     }
 }
-
