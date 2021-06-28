@@ -1,8 +1,8 @@
-pub struct MyIterWrapper<'a, T> {
+pub struct MyIteratorWrapper<'a, T> {
     slice: &'a [T],
 }
 
-impl<'a, T> Iterator for MyIterWrapper<'a, T> {
+impl<'a, T> Iterator for MyIteratorWrapper<'a, T> {
     type Item = &'a T;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -21,13 +21,13 @@ impl<'a, T> Iterator for MyIterWrapper<'a, T> {
     // }
 }
 
-pub struct MyMutableIterator<'iter, T> {
-    slice: &'iter mut [T],
+pub struct MyMutableIterator<'iterator, T> {
+    slice: &'iterator mut [T],
 }
 
-impl<'iter, T> Iterator for MyMutableIterator<'iter, T> {
-    type Item = &'iter mut T;
-    fn next<'next>(&'next mut self) -> Option<Self::Item> {
+impl<'iterator, T> Iterator for MyMutableIterator<'iterator, T> {
+    type Item = &'iterator mut T;
+    fn next(&mut self) -> Option<Self::Item> {
         let slice = &mut self.slice;
         let slice_copy = std::mem::replace(slice, &mut []);
         let (first, rest) = slice_copy.split_first_mut()?;
@@ -36,16 +36,14 @@ impl<'iter, T> Iterator for MyMutableIterator<'iter, T> {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
-    use crate::MyIterWrapper;
-
+    use crate::MyIteratorWrapper;
 
     #[test]
     fn it_works() {
         let collection = vec![1, 2, 3, 4, 5];
-        let wrapper = MyIterWrapper {
+        let wrapper = MyIteratorWrapper {
             slice: &collection[..],
         };
 

@@ -15,7 +15,6 @@ dist
 local
 cache
 .cache
-*.lock
 .idea
 .vscode
 
