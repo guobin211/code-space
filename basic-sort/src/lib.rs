@@ -1,4 +1,6 @@
 mod sort_help;
+mod basic;
+mod interface;
 
 #[allow(dead_code)]
 fn bubble_sort(arr: Vec<i32>) -> Vec<i32> {
@@ -44,6 +46,40 @@ fn insert_sort(mut arr: Vec<i32>) -> Vec<i32> {
     arr
 }
 
+#[allow(dead_code)]
+fn merge_sort(arr: &mut [i32]) {
+    let mid = arr.len() / 2;
+    if mid == 0 {
+        return;
+    }
+    merge_sort(&mut arr[..mid]);
+    merge_sort(&mut arr[mid..]);
+}
+
+#[allow(dead_code)]
+fn merge(arr1: &[i32], arr2: &[i32], res: &mut [i32]) {
+    let mut left = 0;
+    let mut right = 0;
+    let mut index = 0;
+    while left < arr1.len() && right < arr2.len() {
+        if arr1[left] <= arr2[right] {
+            res[index] = arr1[left];
+            index += 1;
+            left += 1;
+        } else {
+            res[index] = arr2[right];
+            index += 1;
+            right += 1;
+        }
+    }
+    if left < arr1.len() {
+        res[index..].copy_from_slice(&arr1[left..]);
+    }
+    if right < arr2.len() {
+        res[index..].copy_from_slice(&arr2[right..]);
+    }
+}
+
 #[cfg(test)]
 mod tests {
 
@@ -71,6 +107,13 @@ mod tests {
 
     #[test]
     fn test_insect_sort() {
+        let arr = get_rand_array(10, -10000, 10000);
+        let res = insert_sort(arr);
+        assert_eq!(is_sorted(&res), true);
+    }
+
+    #[test]
+    fn test_merge_sort() {
         let arr = get_rand_array(10, -10000, 10000);
         let res = insert_sort(arr);
         assert_eq!(is_sorted(&res), true);
