@@ -7,6 +7,15 @@ edition = "2018"
 
 [dependencies]
 rand = "0.8.4"
+imager = "0.3.2"
+clap = "2.33.3"
+tokio = "1.8.0"
+hyper = "0.14.9"
+serde = "1.0.126"
+url = "2.2.2"
+log = "0.4.14"
+
+[dev-dependencies]
 
 [workspace]
 members=["dyn-static", "rust-stream", "basic-sort", "tcp-echo"]

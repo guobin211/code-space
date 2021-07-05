@@ -1,6 +1,7 @@
 mod sort_help;
 mod basic;
 mod interface;
+mod life;
 
 #[allow(dead_code)]
 fn bubble_sort(arr: Vec<i32>) -> Vec<i32> {

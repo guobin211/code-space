@@ -1,3 +1,7 @@
+use crate::cp::{run_child_process, run_cp_with_pipe};
+
+mod cp;
+
 /// enum
 pub enum Change {
     Delete(std::ops::Range<usize>),
@@ -56,4 +60,6 @@ fn main() {
     println!("{}", res);
     let res = spell_check(txt, AntiSpaceChecker);
     println!("{}", res);
+    run_child_process();
+    run_cp_with_pipe();
 }

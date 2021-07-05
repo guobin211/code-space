@@ -7,7 +7,10 @@ fn reverse<T, E>(tuple: (T, E)) -> (E, T) {
 }
 
 #[allow(dead_code)]
-fn apply<F>(f: F) where F: Fn() {
+fn apply<F>(f: F)
+where
+    F: Fn(),
+{
     f()
 }
 
@@ -18,8 +21,8 @@ fn call<F: Fn()>(f: F) {
 
 #[allow(dead_code)]
 fn create_fn(p: String) -> impl Fn() {
-   let txt = "inner text".to_owned();
-   move || println!("params is {}, {}", p, txt)
+    let txt = "inner text".to_owned();
+    move || println!("params is {}, {}", p, txt)
 }
 
 pub struct CustomerTupleClass(i32);
