@@ -1,6 +1,6 @@
 use std::fmt::Debug;
 
-// macro_rules 宏编程
+/// macro_rules 宏编程
 #[allow(unused_macros)]
 macro_rules! find_min {
     ($x: expr) => {
@@ -19,19 +19,20 @@ struct Book {
     year: u32,
 }
 
-// 不可变引用
+/// 不可变引用函数
 #[allow(dead_code)]
 fn print_book_author(book_ref: &Book) {
     println!("book author is {}", book_ref.author)
 }
 
-// 可变引用
+/// 可变引用函数（借用取得所有权）
 #[allow(dead_code)]
 fn change_book_name(book_ref_mut: &mut Book) {
     book_ref_mut.name = "change book name";
     println!("book is {:?}", book_ref_mut)
 }
 
+/// 生命周期借用
 #[allow(dead_code)]
 fn change_year<'a>(year: &'a u32, book: &mut Book) {
     book.year = *year;
