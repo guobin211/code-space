@@ -1,70 +1,57 @@
-pub trait Stack<T> {
-    fn pop(&self) -> Result<T, ()>;
-    fn top(&self) -> Result<T, ()>;
-    fn push(&self, value: T) -> bool;
-    fn is_empty(&self) -> bool;
-    fn new(capacity: u32) -> Self;
+#[derive(Debug)]
+pub struct Stack<T> {
+    top: Option<Box<Node<T>>>,
 }
 
-pub struct VecStack<T> {
-    head: Option<Node<T>>,
-    size: u32,
-    length: u32,
-}
-
-pub struct Node<T> {
+#[derive(Debug, Clone)]
+struct Node<T> {
     value: T,
-    next: Option<Node<T>>,
+    next: Option<Box<Node<T>>>,
 }
 
-impl Stack<u32> for VecStack<u32> {
-    fn pop(&self) -> Result<u32, None> {
-        if this.is_empty() {
-            Err(())
-        }
-        let current = this.head;
-        loop {
-            if current.next {
-                current = current.next;
-            } else {
-                Ok(current.value)
+#[allow(dead_code)]
+impl<T> Stack<T> {
+    fn new() -> Stack<T> {
+        Stack { top: None }
+    }
+
+    fn push(&mut self, value: T) {
+        let mut node = Node {
+            value,
+            next: None,
+        };
+        let next = self.top.take();
+        node.next = next;
+        self.top = Some(Box::new(node));
+    }
+
+    fn pop(&mut self) -> Option<T> {
+        let unknown = self.top.take();
+        match unknown {
+            Some(mut data) => {
+                self.top = data.next.take();
+                Some(data.value)
             }
+            None => None,
         }
     }
+}
 
-    fn top(&self) -> Option<u32> {
-        this.head.value
-    }
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    fn push(&self, value: u32) -> bool {
-        if this.length < this.size {
-            let current = this.head;
-            loop {
-                if current.next {
-                    current = current.next;
-                } else {
-                    current.next = Some(Node {
-                        value,
-                        next: Some(Node),
-                    });
-                    this.length += 1;
-                    true
-                }
-            }
-        }
-        false
-    }
+    #[test]
+    fn test_stack() {
+        let mut stack: Stack<i32> = Stack::new();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
 
-    fn is_empty(&self) -> bool {
-        this.length == 0
-    }
+        println!("stack is {:?}", stack);
 
-    fn new(capacity: u32) -> Self {
-        let size = if capacity < 10 { 10 } else { size };
-        VecStack {
-            length: 0,
-            size,
-            head: Some(Node),
-        }
+        if let Some(value) = stack.pop() {
+            assert_eq!(value, 3);
+        };
     }
 }
