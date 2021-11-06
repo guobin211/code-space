@@ -1,6 +1,7 @@
 use crate::cp::{run_child_process, run_cp_with_pipe};
 
 mod cp;
+mod rc;
 
 /// enum
 pub enum Change {
