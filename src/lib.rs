@@ -52,8 +52,13 @@ impl Config {
 }
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    let content = fs::read_to_string(config.filename)?;
-    println!("find text: {}", content);
+
+    let content = fs::read_to_string(&config.filename)?;
+    let list = search(&config.query, &content);
+    println!("find list {:?}", list.len());
+    for elem in list.iter() {
+        println!("{}", elem);
+    }
     Ok(())
 }
 
@@ -89,5 +94,14 @@ mod tests {
         hello4world";
         let res = search(&query, &content);
         println!("res is {:?}", res);
+    }
+
+    #[test]
+    fn test_run() {
+        let config = Config {
+            filename: String::from("README.md"),
+            query: String::from("code-space"),
+        };
+        run(config).unwrap();
     }
 }
