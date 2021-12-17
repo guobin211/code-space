@@ -12,7 +12,6 @@ fn main() {
         Rc::weak_count(&leaf)
     );
     let other = &leaf;
-
     println!(
         "leaf strong = {}, weak = {}",
         Rc::strong_count(&leaf),

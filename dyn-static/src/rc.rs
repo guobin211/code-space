@@ -21,8 +21,11 @@ mod tests {
             children: RefCell::new(vec![]),
         };
         let leaf = Rc::new(first.clone());
+        // 强引用
         assert_eq!(Rc::strong_count(&leaf), 1);
-        assert_eq!(Rc::weak_count(&leaf), 3);
+        // 弱引用
+        assert_eq!(Rc::weak_count(&leaf), 0);
         println!("first {:?}", first);
+        println!("leaf {:?}", leaf);
     }
 }
