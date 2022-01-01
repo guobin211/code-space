@@ -40,8 +40,10 @@ mod tests {
     #[test]
     fn it_works() {
         assert_eq!(2 + 2, 4);
+        println!("form main thread");
         let pool = ThreadPool::new(10);
         let foo = || println!("hello from test thread");
         pool.execute(foo);
+        println!("end of main thread");
     }
 }

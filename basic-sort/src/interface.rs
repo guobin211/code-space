@@ -34,7 +34,7 @@ fn change_book_name(book_ref_mut: &mut Book) {
 
 /// 生命周期借用
 #[allow(dead_code)]
-fn change_year<'a>(year: &'a u32, book: &mut Book) {
+fn change_year(year: &u32, book: &mut Book) {
     book.year = *year;
 }
 

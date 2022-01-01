@@ -57,4 +57,12 @@ mod tests {
 
         println!("name is {}", name);
     }
+
+    #[test]
+    fn test_arrow_fn() {
+        let age = 22;
+        let get_year = |age: &i32| -> u32 { (age + 1) as u32 };
+        let year = get_year(&age);
+        println!("year is {}, age is {}", year, age);
+    }
 }

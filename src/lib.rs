@@ -52,7 +52,6 @@ impl Config {
 }
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-
     let content = fs::read_to_string(&config.filename)?;
     let list = search(&config.query, &content);
     println!("find list {:?}", list.len());
