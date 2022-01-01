@@ -1,20 +1,11 @@
 [package]
 name = "code-space"
 version = "0.1.0"
-edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+edition = "2021"
 
 [dependencies]
-rand = "0.8.4"
-clap = "2.33.3"
-tokio = "1.8.0"
-hyper = "0.14.9"
-serde = "1.0.126"
-url = "2.2.2"
-log = "0.4.14"
 
 [dev-dependencies]
 
 [workspace]
-members=["dyn-static", "rust-stream", "basic-sort", "tcp-echo", "queue-stack"]
+members=["rc-ref"]

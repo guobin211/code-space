@@ -1,0 +1,27 @@
+{
+  "name": "code-space",
+  "version": "1.0.0",
+  "description": "rust book marks",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --version",
+    "new:space": "node __scripts__/create.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guobin211/code-space.git"
+  },
+  "author": "michaelbguo@tencent.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guobin211/code-space/issues"
+  },
+  "homepage": "https://github.com/guobin211/code-space#readme",
+  "engines": {
+    "node": ">= 16.13"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.5",
+    "typescript": "^4.5.4"
+  }
+}
