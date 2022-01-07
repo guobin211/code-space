@@ -8,4 +8,4 @@ edition = "2021"
 [dev-dependencies]
 
 [workspace]
-members=["rc-ref"]
+members = ["packages/rc-ref"]

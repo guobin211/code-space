@@ -16,7 +16,7 @@ function createCargoLib(name) {
 function main() {
   const name = process.argv[2];
   if (!name) {
-    console.log('Please run `pnpm new:space $name`');
+    console.log('Please run `npm new:space $name`');
     process.exit(1);
   }
   createCargoLib(name);
