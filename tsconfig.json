@@ -4,14 +4,20 @@
     "target": "ES2020",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": false,
     "declaration": false,
     "noEmit": true,
     "lib": [
-      "ESNext"
-    ]
+      "ESNext",
+      "dom"
+    ],
+    "jsx": "react"
   },
+  "include": [
+    "packages",
+    "playground"
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -17,3 +17,5 @@ cache
 .cache
 .idea
 .vscode
+/.swc/
+*.log
