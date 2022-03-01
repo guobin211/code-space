@@ -30,11 +30,6 @@ const config = {
           test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|redux|react-redux)[\\/]/,
           name: 'commons',
           chunks: 'all'
-        },
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all'
         }
       }
     },
@@ -62,7 +57,7 @@ const config = {
     proxy: {
       '/api': 'http://localhost:8899/web-api-test'
     },
-    port: 3000
+    port: 4200
   }
 };
 

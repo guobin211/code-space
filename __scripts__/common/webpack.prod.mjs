@@ -21,6 +21,21 @@ const prodConfig = merge(devConfig, {
     maxEntrypointSize: 500000
   },
   optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|redux|react-redux)[\\/]/,
+          name: 'commons',
+          chunks: 'all'
+        },
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    },
+    runtimeChunk: 'single',
     minimizer: [
       new CssMinimizerPlugin()
     ]

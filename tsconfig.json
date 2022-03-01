@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "ESNext",
-    "target": "ES2020",
+    "target": "ES2018",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
@@ -15,8 +15,11 @@
     "jsx": "react"
   },
   "include": [
+    "__scripts__",
+    "__tests__",
     "packages",
-    "playground"
+    "playground",
+    "src",
   ],
   "exclude": [
     "node_modules"
