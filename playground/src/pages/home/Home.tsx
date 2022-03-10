@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import HookTest from '../../components/HookTest';
+import SetIntervalHook from '../../components/SetIntervalHook';
 
 class Home extends Component {
   render() {
     return (
       <div>
         Home
-        <HookTest />
+        <SetIntervalHook />
       </div>
     );
   }

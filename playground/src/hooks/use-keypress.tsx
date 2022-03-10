@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react';
-import { useLatest } from './use-latest';
+import { useLast } from './use-last';
 
 export type KeyPredicate = (event: KeyboardEvent) => boolean;
 export type keyType = number | string;
@@ -180,8 +180,8 @@ const defaultEvents: KeyEvent[] = ['keydown'];
 
 export function useKeyPress(keyFilter: KeyFilter, handle: EventHandler, option?: Options) {
   const { events = defaultEvents, target } = option || {};
-  const eventHandlerRef = useLatest(handle);
-  const keyFilterRef = useLatest(keyFilter);
+  const eventHandlerRef = useLast(handle);
+  const keyFilterRef = useLast(keyFilter);
 
   const clear = useCallback(() => {
     for (const name of events) {

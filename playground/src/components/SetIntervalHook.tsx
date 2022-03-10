@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSetInterval } from '../hooks/use-set-interval';
 
-const HookTest: React.FC = () => {
+const SetIntervalHook: React.FC = () => {
   const [options] = useState({ delay: 3000, immediate: true });
   const fetchData = () => {
     fetch('/index.html')
@@ -36,4 +36,4 @@ const HookTest: React.FC = () => {
   );
 };
 
-export default HookTest;
+export default SetIntervalHook;
