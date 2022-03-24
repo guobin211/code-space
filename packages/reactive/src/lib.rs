@@ -26,6 +26,7 @@ mod tests {
         subject.publish("some data");
 
         subject.clear();
+        subject.publish("clear data");
 
         println!("Subject {:?}", subject);
     }

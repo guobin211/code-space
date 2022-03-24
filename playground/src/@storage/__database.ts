@@ -30,37 +30,37 @@ export class NodeJSStorage implements Storage {
 }
 
 export class Database {
-  private localStorage: Storage;
+  #localStorage: Storage;
 
   constructor() {
     if (typeof window !== 'undefined') {
-      this.localStorage = window.localStorage;
+      this.#localStorage = window.localStorage;
     } else {
-      this.localStorage = new NodeJSStorage();
+      this.#localStorage = new NodeJSStorage();
     }
   }
 
   get length() {
-    return this.localStorage.length;
+    return this.#localStorage.length;
   }
 
   clear(): void {
-    this.localStorage.clear();
+    this.#localStorage.clear();
   }
 
   getItem(key: string): string | null {
-    return this.localStorage.getItem(key);
+    return this.#localStorage.getItem(key);
   }
 
   key(index: number): string | null {
-    return this.localStorage.key(index);
+    return this.#localStorage.key(index);
   }
 
   removeItem(key: string): void {
-    this.localStorage.removeItem(key);
+    this.#localStorage.removeItem(key);
   }
 
   setItem(key: string, value: string): void {
-    this.localStorage.setItem(key, value);
+    this.#localStorage.setItem(key, value);
   }
 }
