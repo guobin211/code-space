@@ -7,9 +7,7 @@ pub mod math {
     const DEVIATION: f64 = f64::EPSILON;
 
     /// Rectangle struct
-    /// ```
-    ///    // struct 类似 class
-    /// ```
+    /// struct 类似 class
     #[derive(Debug, Copy, Clone)]
     pub struct Rectangle {
         pub width: f64,
@@ -28,9 +26,7 @@ pub mod math {
     }
 
     /// Comparable trait
-    /// ```
-    ///   // trait 类似 interface
-    /// ```
+    /// trait 类似 interface
     pub trait Comparable {
         fn compare(&self, other: &Self) -> f64;
     }

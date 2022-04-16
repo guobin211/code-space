@@ -1,15 +1,17 @@
 import { spawnSync } from 'child_process';
 
 function createCargoLib(name) {
-  const cmd = `cargo new ${name} --lib`;
-  console.log('cmd: ', cmd);
+  const cmd = `cargo new --name ${name} --lib packages/${name}`;
   const result = spawnSync(cmd);
+  console.log('cmd: ', cmd);
   if (result) {
     const { stdout, stderr } = result;
     if (stderr) {
       console.log(stderr.toString());
     }
-    console.log(stdout.toString());
+    if (stdout) {
+      console.log(stdout.toString());
+    }
   }
 }
 

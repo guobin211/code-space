@@ -13,3 +13,7 @@ version = "0.1.0"
 [[package]]
 name = "reactive"
 version = "0.1.0"
+
+[[package]]
+name = "str"
+version = "0.1.0"

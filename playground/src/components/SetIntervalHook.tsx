@@ -26,6 +26,7 @@ const SetIntervalHook: React.FC = () => {
 
   return (
     <div>
+      <img src="/static/rust.png" alt="" width={80} height={80}/>
       <button type="button" onClick={handleClick}>
         fetch
       </button>
