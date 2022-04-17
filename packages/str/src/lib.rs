@@ -1,3 +1,5 @@
+mod book;
+
 use std::fmt::Display;
 
 /// String可以直接返回
