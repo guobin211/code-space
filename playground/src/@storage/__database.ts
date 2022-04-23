@@ -17,7 +17,15 @@ export class NodeJSStorage implements Storage {
   }
 
   key(index: number): string | null {
-    return undefined;
+    if (typeof index !== 'number') {
+      throw new Error('Index must be a number');
+    }
+    const keys = Array.from(this.data.keys());
+    if (index >= keys.length || index < 0) {
+      console.error(`Index ${index} is out of range`);
+      return null;
+    }
+    return keys[index];
   }
 
   removeItem(key: string): void {
@@ -30,37 +38,37 @@ export class NodeJSStorage implements Storage {
 }
 
 export class Database {
-  #localStorage: Storage;
+  _localStorage: Storage;
 
   constructor() {
     if (typeof window !== 'undefined') {
-      this.#localStorage = window.localStorage;
+      this._localStorage = window.localStorage;
     } else {
-      this.#localStorage = new NodeJSStorage();
+      this._localStorage = new NodeJSStorage();
     }
   }
 
   get length() {
-    return this.#localStorage.length;
+    return this._localStorage.length;
   }
 
   clear(): void {
-    this.#localStorage.clear();
+    this._localStorage.clear();
   }
 
   getItem(key: string): string | null {
-    return this.#localStorage.getItem(key);
+    return this._localStorage.getItem(key);
   }
 
   key(index: number): string | null {
-    return this.#localStorage.key(index);
+    return this._localStorage.key(index);
   }
 
   removeItem(key: string): void {
-    this.#localStorage.removeItem(key);
+    this._localStorage.removeItem(key);
   }
 
   setItem(key: string, value: string): void {
-    this.#localStorage.setItem(key, value);
+    this._localStorage.setItem(key, value);
   }
 }

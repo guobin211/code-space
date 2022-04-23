@@ -2,46 +2,46 @@ import { Database } from './__database';
 import { CallBack, Observer } from './__observer';
 
 export class Store<T> implements Observer<T> {
-  #state: T;
-  #preState: T;
-  #autoIndex: number;
-  #observer: Map<number, CallBack>;
-  #database: Database;
+  _state: T;
+  _preState: T;
+  _index: number;
+  _observer: Map<number, CallBack>;
+  _db: Database;
 
   constructor() {
-    this.#database = new Database();
+    this._db = new Database();
   }
 
   clear() {
-    this.#observer.clear();
-    this.#autoIndex = 0;
+    this._observer.clear();
+    this._index = 0;
   }
 
   getState<E extends T>(): E {
-    return this.#state as E;
+    return this._state as E;
   }
 
   setState<E extends T>(v: E) {
-    this.#preState = this.#state;
-    this.#state = Object.assign({}, this.#state, v);
-    this.#notify();
+    this._preState = this._state;
+    this._state = Object.assign({}, this._state, v);
+    this._notify();
   }
 
   subscribe(fn: CallBack): CallBack {
     if (typeof fn !== 'function') {
       throw new Error('subscribe must be a function');
     }
-    const index = this.#autoIndex + 1;
-    this.#observer.set(index, fn);
-    this.#autoIndex = index;
+    const index = this._index + 1;
+    this._observer.set(index, fn);
+    this._index = index;
     return () => {
-      this.#observer.delete(index);
+      this._observer.delete(index);
     };
   }
 
-  #notify() {
-    this.#observer.forEach((fn) => {
-      fn(this.#state);
+  _notify() {
+    this._observer.forEach((fn) => {
+      fn(this._state);
     });
   };
 }

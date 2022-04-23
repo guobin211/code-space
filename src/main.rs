@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello Rust 2022")
+    println!("from src main.rs");
 }
