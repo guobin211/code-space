@@ -9,4 +9,4 @@ clap = { version = "3.1.12", features = ["derive"] }
 [dev-dependencies]
 
 [workspace]
-members = ["packages/rc-ref", "packages/reactive", "packages/str"]
+members = ["app_server", "app_client", "app_libs"]

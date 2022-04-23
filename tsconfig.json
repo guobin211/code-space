@@ -16,10 +16,9 @@
   },
   "include": [
     "__scripts__",
-    "__tests__",
-    "packages",
-    "playground",
-    "src",
+    "app",
+    "api",
+    "src"
   ],
   "exclude": [
     "node_modules"

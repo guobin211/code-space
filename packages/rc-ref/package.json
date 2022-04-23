@@ -1,7 +1,0 @@
-{
-  "name": "rc-ref",
-  "version": "1.0.0",
-  "scripts": {
-    "test": "deno run -A src/lib.ts"
-  }
-}

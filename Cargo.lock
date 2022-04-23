@@ -3,6 +3,21 @@
 version = 3
 
 [[package]]
+name = "app-client"
+version = "0.1.0"
+
+[[package]]
+name = "app_libs"
+version = "0.1.0"
+dependencies = [
+ "utf8_slice",
+]
+
+[[package]]
+name = "app_server"
+version = "0.1.0"
+
+[[package]]
 name = "atty"
 version = "0.2.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -160,21 +175,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a1feb54ed693b93a84e14094943b84b7c4eae204c512b7ccb95ab0c66d278ad1"
 dependencies = [
  "proc-macro2",
-]
-
-[[package]]
-name = "rc-ref"
-version = "0.1.0"
-
-[[package]]
-name = "reactive"
-version = "0.1.0"
-
-[[package]]
-name = "str"
-version = "0.1.0"
-dependencies = [
- "utf8_slice",
 ]
 
 [[package]]
