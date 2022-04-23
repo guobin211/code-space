@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use std::fmt::Debug;
 
 pub fn tacks_ownership<T: Debug>(s: T) {

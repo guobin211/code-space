@@ -1,4 +1,7 @@
+#![allow(dead_code)]
+
 mod book;
+mod into;
 
 use std::fmt::Display;
 
