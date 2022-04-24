@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 mod rc_owner;
 mod rc_ref;
 

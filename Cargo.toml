@@ -4,9 +4,14 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-clap = { version = "3.1.12", features = ["derive"] }
+clap = { version = "3.1.6", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+itertools = "0.10.2"
+regex = "1"
+rand = "0.8.4"
 
 [dev-dependencies]
+proptest = "1.0.0"
 
 [workspace]
 members = ["app_server", "app_client", "app_libs"]
