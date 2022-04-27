@@ -7,7 +7,8 @@
     "dev": "webpack serve -c webpack.config.mjs",
     "build": "webpack -c webpack.config.mjs --mode production",
     "test": "",
-    "lint": "eslint ./ --fix --ext .js,.mjs,.ts,.tsx"
+    "lint": "eslint ./ --fix --ext .js,.mjs,.ts,.tsx",
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",
@@ -21,9 +22,6 @@
   "homepage": "https://github.com/guobin211/code-space#readme",
   "engines": {
     "node": ">= 16"
-  },
-  "lint-staged": {
-    "*.ts|*.mjs|*.js": "eslint --fix"
   },
   "workspaces": [
     "api",
@@ -50,7 +48,7 @@
     "eslint-plugin-react": "^7.29.4",
     "express": "^4.17.2",
     "html-webpack-plugin": "^5.5.0",
-    "lint-staged": "^12.4.1",
+    "husky": "^7.0.4",
     "mini-css-extract-plugin": "^2.5.3",
     "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",
