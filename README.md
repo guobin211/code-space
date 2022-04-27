@@ -3,6 +3,7 @@
 > Mozilla 主导开发的通用、编译型编程语言。
 
 ## 基础入门
+
 ### 1.基本概念
 
 1. 语言基础
@@ -17,9 +18,9 @@
 2. 基本数据结构
 3. 所有权与生命周期
 4. 模式匹配与错误处理
-5. 泛型与Trait<接口>
+5. 泛型与 Trait<接口>
 6. 智能指针
-7. 多线程与Async
+7. 多线程与 Async
 8. 高级特征
 
 #### 3.通用概念
@@ -37,7 +38,7 @@
 #### 5.所有权与生命周期
 
 1. 所有权、引用与借用
-2. Slices切片
+2. Slices 切片
 3. 作用域与生命周期
 4. 资源管理
 5. 泛型析构函数
@@ -73,8 +74,8 @@
 6. 抽象数据结构: 映射
 7. 线段树
 8. 区间查找，Trie
-9. AVL树
-10. 2-3树
+9. AVL 树
+10. 2-3 树
 11. 红黑树
 12. 二分搜索树
 
@@ -91,20 +92,13 @@
 anyhow - 提供 anyhow::Error 以进行简单的错误处理
 asset_cmd - 简化 CLI 的集成测试
 atty - 检测应用程序是否运行在 tty 上。
-clap-verbosity-flag - 添加 --verbose 标签到 structopt CLI
 clap - 命令行参数解析器
 crossbeam-channel - 为消息传递提供多生产者 —— 多消费者 channel
-ctrlc - 简易 ctrl-c 处理程序
 env_logger - 通过环境变量实现日志配置
-exitcode - 系统退出码常量
 human-panic - panic 消息处理程序
-indicatif - 进度条和微框
 log - 在实现之上提供日志抽象
 predicates - 实现布尔值谓词函数（boolean-valued predicate functions）
-proptest - 属性测试框架
-serde_json - 序列化、反序列化为 JSON
 signal-hook - 处理 UNIX 信号
-structopt - 解析命令行参数为一个结构体
 tokio - 异步运行时
 wasm-pack - 用于构建 WebAssembly 的工具
 ```
