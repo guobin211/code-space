@@ -1,4 +1,4 @@
-(_ => {
+(() => {
   const source = 'Hello, World!';
   const result = source.toString();
   const obj1 = String(source);
