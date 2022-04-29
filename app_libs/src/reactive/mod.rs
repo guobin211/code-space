@@ -1,3 +1,5 @@
+mod fibonacci;
+mod generic;
 mod observer;
 mod subject;
 
