@@ -1,3 +1,5 @@
+extern crate core;
+
 use actix_files::Files;
 use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 use anyhow::Result;
@@ -35,9 +37,4 @@ async fn main() -> Result<()> {
         .await?;
     }
     Ok(())
-}
-
-#[get("/")]
-async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("hello rust")
 }
