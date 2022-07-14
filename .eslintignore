@@ -1,8 +1,20 @@
 .vscode
 .idea
 .swc
+.next
+.turbo
+.cache
 
 node_modules
+cache
 dist
 build
 target
+out
+pkg
+npm
+target
+public
+static
+
+*.config.js

@@ -18,4 +18,11 @@ tokio = { version = "1", features = ["full"] }
 proptest = "1.0.0"
 
 [workspace]
-members = ["app_server", "app_client", "app_libs"]
+members = [
+    "crates/app_client",
+    "crates/app_server",
+    "crates/app_libs",
+    "crates/rust-wasm-core",
+    "crates/rust-wasm-node",
+    "crates/rust-wasm-web",
+]
