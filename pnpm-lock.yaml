@@ -252,7 +252,7 @@ importers:
 
   crates/rust-wasm-node:
     specifiers:
-      '@napi-rs/cli': ^2.6.2
+      '@napi-rs/cli': ^2.6
       ava: ^4.0.1
     devDependencies:
       '@napi-rs/cli': 2.10.1
