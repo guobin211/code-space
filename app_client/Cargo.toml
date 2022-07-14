@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 hyper = { version = "0.14", features = ["full"] }
 tokio = { version = "1.17.0", features = ["full"] }
-iced = "0.3"
+iced = "0.4"
 url= "2.2"
 
 [dev-dependencies]

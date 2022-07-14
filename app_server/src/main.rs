@@ -1,7 +1,7 @@
 extern crate core;
 
 use actix_files::Files;
-use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{web, App, HttpServer};
 use anyhow::Result;
 
 mod api;
