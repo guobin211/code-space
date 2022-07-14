@@ -56,3 +56,5 @@ yarn-error.log*
 # wasm-pack
 npm
 *.node
+crates/rust-wasm-node/index.d.ts
+crates/rust-wasm-node/index.js
