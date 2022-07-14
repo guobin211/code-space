@@ -1,20 +1,21 @@
 [package]
 name = "code-space"
 version = "0.1.0"
-edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+edition = "2021"
 
 [dependencies]
+clap = { version = "3.1.6", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+itertools = "0.10.2"
+regex = "1"
 rand = "0.8.4"
-clap = "2.33.3"
-tokio = "1.8.0"
-hyper = "0.14.9"
-serde = "1.0.126"
-url = "2.2.2"
-log = "0.4.14"
+anyhow = "1.0.57"
+env_logger = "0.9.0"
+deno_core = "0.143"
+tokio = { version = "1", features = ["full"] }
 
 [dev-dependencies]
+proptest = "1.0.0"
 
 [workspace]
-members=["dyn-static", "rust-stream", "basic-sort", "tcp-echo", "queue-stack"]
+members = ["app_server", "app_client", "app_libs"]

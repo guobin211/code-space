@@ -1,0 +1,8 @@
+.vscode
+.idea
+.swc
+
+node_modules
+dist
+build
+target
