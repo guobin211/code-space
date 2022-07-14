@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 4202",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint *.ts*",
+    "clear": "rm -rf ./node_modules"
   },
   "dependencies": {
     "next": "12",
@@ -18,7 +19,6 @@
     "@babel/core": "^7",
     "eslint": "7",
     "next-transpile-modules": "9",
-    "@next/eslint-plugin-next": "^12.2.2",
     "tsconfig": "workspace:*",
     "@types/node": "^16",
     "@types/react": "17",

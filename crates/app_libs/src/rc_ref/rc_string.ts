@@ -7,7 +7,7 @@ function test() {
 
 function test_index_of_string() {
   // utf-16
-  const p = "中國人";
+  const p = '中國人';
   const c = p[0];
   console.log('c char is : ' + c.charCodeAt(0));
   console.log('中国人 size is ', p.length);
@@ -17,6 +17,7 @@ function test_prototype() {
   interface MyString extends String {
     replaceByIndex: (i: number, c: string) => string;
   }
+
   /**
    * change prototype
    */

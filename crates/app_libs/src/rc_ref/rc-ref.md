@@ -8,10 +8,10 @@
 
 ## 相关文档
 
-### V8内存管理
+### V8 内存管理
 
 [v8.dev](https://v8.dev/blog/trash-talk)
 
-[v8内存分配](https://juejin.cn/post/6909239354418266119)
+[v8 内存分配](https://juejin.cn/post/6909239354418266119)
 
-[v8解释器](https://juejin.cn/post/7018468848886579214)
+[v8 解释器](https://juejin.cn/post/7018468848886579214)

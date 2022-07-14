@@ -16,24 +16,24 @@ export class People extends Person {
 export class Man implements Person {
   name: string;
   constructor() {
-    this.name = ''
+    this.name = '';
   }
 }
 
 export enum Gender {
   UNKNOWN,
   MALE,
-  FEMALE
+  FEMALE,
 }
 
 export class WoMan implements Human {
   name: string;
   gender: Gender;
   constructor() {
-    this.name = ''
+    this.name = '';
     this.gender = Gender.UNKNOWN;
   }
   isWomen(): boolean {
-    return this.gender === Gender.FEMALE
+    return this.gender === Gender.FEMALE;
   }
 }

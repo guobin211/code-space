@@ -10,7 +10,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "clear": "turbo run clear"
   },
   "type": "module",
   "dependencies": {
@@ -50,7 +50,6 @@
     "eslint": "^7",
     "express": "^4.17",
     "html-webpack-plugin": "^5.5",
-    "husky": "^7",
     "imagemin": "^8",
     "imagemin-avif": "^0.1",
     "imagemin-gifsicle": "^7",

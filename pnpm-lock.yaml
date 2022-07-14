@@ -35,7 +35,6 @@ importers:
       gifwrap: ^0.10
       html-webpack-plugin: ^5.5
       html2canvas: ^1.4
-      husky: ^7
       imagemin: ^8
       imagemin-avif: ^0.1
       imagemin-gifsicle: ^7
@@ -101,7 +100,6 @@ importers:
       eslint-plugin-react: 7.30.1_eslint@7.32.0
       express: 4.18.1
       html-webpack-plugin: 5.5.0_webpack@5.73.0
-      husky: 7.0.4
       imagemin: 8.0.1
       imagemin-avif: 0.1.3
       imagemin-gifsicle: 7.0.0
@@ -132,7 +130,6 @@ importers:
   apps/docs:
     specifiers:
       '@babel/core': ^7
-      '@next/eslint-plugin-next': ^12.2.2
       '@types/node': ^16
       '@types/react': '17'
       eslint: '7'
@@ -150,7 +147,6 @@ importers:
       ui: link:../../packages/ui
     devDependencies:
       '@babel/core': 7.18.6
-      '@next/eslint-plugin-next': 12.2.2
       '@types/node': 16.11.44
       '@types/react': 17.0.47
       eslint: 7.32.0
@@ -161,7 +157,6 @@ importers:
   apps/web:
     specifiers:
       '@babel/core': ^7
-      '@next/eslint-plugin-next': ^12.2.2
       '@types/node': ^16
       '@types/react': '17'
       eslint: '7'
@@ -179,7 +174,6 @@ importers:
       ui: link:../../packages/ui
     devDependencies:
       '@babel/core': 7.18.6
-      '@next/eslint-plugin-next': 12.2.2
       '@types/node': 16.11.44
       '@types/react': 17.0.47
       eslint: 7.32.0
@@ -545,12 +539,6 @@ packages:
   /@next/env/12.0.8:
     resolution: {integrity: sha512-Wa0gOeioB9PHap9wtZDZEhgOSE3/+qE/UALWjJHuNvH4J3oE+13EjVOiEsr1JcPCXUN8ESQE+phDKlo6qJ8P9g==}
     dev: false
-
-  /@next/eslint-plugin-next/12.2.2:
-    resolution: {integrity: sha512-XOi0WzJhGH3Lk51SkSu9eZxF+IY1ZZhWcJTIGBycAbWU877IQa6+6KxMATWCOs7c+bmp6Sd8KywXJaDRxzu0JA==}
-    dependencies:
-      glob: 7.1.7
-    dev: true
 
   /@next/react-refresh-utils/12.0.8_react-refresh@0.8.3:
     resolution: {integrity: sha512-Bq4T/aOOFQUkCF9b8k9x+HpjOevu65ZPxsYJOpgEtBuJyvb+sZREtDDLKb/RtjUeLMrWrsGD0aLteyFFtiS8Og==}
@@ -3487,17 +3475,6 @@ packages:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
     dev: true
 
-  /glob/7.1.7:
-    resolution: {integrity: sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==}
-    dependencies:
-      fs.realpath: 1.0.0
-      inflight: 1.0.6
-      inherits: 2.0.4
-      minimatch: 3.1.2
-      once: 1.4.0
-      path-is-absolute: 1.0.1
-    dev: true
-
   /glob/7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
     dependencies:
@@ -3738,12 +3715,6 @@ packages:
   /human-signals/3.0.1:
     resolution: {integrity: sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==}
     engines: {node: '>=12.20.0'}
-    dev: true
-
-  /husky/7.0.4:
-    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
-    engines: {node: '>=12'}
-    hasBin: true
     dev: true
 
   /iconv-lite/0.4.24:

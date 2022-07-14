@@ -15,7 +15,7 @@ export function ref<T extends Record<string, any>>(v: T): T {
     },
     ownKeys: (target) => {
       return Object.keys(target);
-    }
+    },
   });
 }
 

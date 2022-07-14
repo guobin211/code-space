@@ -1,7 +1,6 @@
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { merge } from 'webpack-merge';
-import { DIST_PATH } from '../config.mjs';
 import { getAssetsLoader, getCssLoader, getTsxLoader } from './webpack.common.mjs';
 import devConfig from './webpack.dev.mjs';
 
@@ -13,7 +12,6 @@ const prodConfig = merge(devConfig, {
   stats: 'errors-warnings',
   output: {
     filename: 'webpack/js/[name].[contenthash].js',
-    path: DIST_PATH,
     clean: true,
     publicPath: '/'
   },

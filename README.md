@@ -1,6 +1,6 @@
-# Code Space 2022 
+# Code Space 2022
 
 - Node.js
 - Rust
 - WebAssembly
-- React 
+- React
