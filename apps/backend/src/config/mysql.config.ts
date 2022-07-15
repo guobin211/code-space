@@ -1,5 +1,5 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { getEnvConfig } from './env.config';
+import { getEnvConfig, IS_PROD } from './env.config';
 
 export function setUpMySQL() {
   const { SQL_NAME, SQL_PASSWORD } = getEnvConfig();
@@ -13,5 +13,6 @@ export function setUpMySQL() {
     entities: ['src/**/**.entity{.ts,.js}'],
     connectorPackage: 'mysql2',
     synchronize: true,
+    retryAttempts: IS_PROD ? 9 : 3,
   });
 }

@@ -9,6 +9,8 @@ export interface EnvConfig {
   SQL_PASSWORD: string;
 }
 
+export const IS_PROD = process.env.NODE_ENV === 'production';
+
 export function getEnvConfig(): Partial<EnvConfig> {
   return process.env as object;
 }
