@@ -171,19 +171,17 @@ importers:
       cookie-parser: ^1.4.6
       csurf: ^1.11.0
       eslint: ^8.19.0
-      eslint-config-prettier: ^8.5.0
-      eslint-plugin-prettier: ^4.2.1
       express: ^4.18.1
       express-rate-limit: ^6.4.0
       express-session: ^1.17.3
       helmet: ^5.1.0
+      ioredis: ^5.2.0
       jest: ^27.5.1
       mongoose: ^6.4.4
       mysql2: ^2.3.3
       passport: ^0.6.0
       passport-jwt: ^4.0.0
       passport-local: ^1.0.0
-      prettier: ^2.7.1
       reflect-metadata: ^0.1.13
       rimraf: ^3.0.2
       rxjs: ^7.5.6
@@ -225,6 +223,7 @@ importers:
       express-rate-limit: 6.4.0_express@4.18.1
       express-session: 1.17.3
       helmet: 5.1.0
+      ioredis: 5.2.0
       mongoose: 6.4.4
       mysql2: 2.3.3
       passport: 0.6.0
@@ -234,7 +233,7 @@ importers:
       rimraf: 3.0.2
       rxjs: 7.5.6
       swagger-ui-express: 4.5.0_express@4.18.1
-      typeorm: 0.3.7_pa4ea3wjef6s4gsskhbyci3cte
+      typeorm: 0.3.7_hvm534w3cjfabpdqhsdt7hc5be
     devDependencies:
       '@nestjs/cli': 9.0.0
       '@nestjs/schematics': 9.0.1_typescript@4.7.4
@@ -253,10 +252,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.30.6_2vt5mtrqleafs33qg2bhpmbaqm
       '@typescript-eslint/parser': 5.30.6_4x5o4skxv6sl53vpwefgt23khm
       eslint: 8.19.0
-      eslint-config-prettier: 8.5.0_eslint@8.19.0
-      eslint-plugin-prettier: 4.2.1_7uxdfn2xinezdgvmbammh6ev5i
       jest: 27.5.1_ts-node@10.9.1
-      prettier: 2.7.1
       source-map-support: 0.5.21
       supertest: 6.2.4
       ts-jest: 27.1.5_7qhprak64zhe3pbaj7ujjugqgu
@@ -842,6 +838,10 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@ioredis/commands/1.1.1:
+    resolution: {integrity: sha512-fsR4P/ROllzf/7lXYyElUJCheWdTJVJvOTps8v9IWKFATxR61ANOlnoPqhH099xYLrJGpc2ZQ28B3rMeUt5VQg==}
+    dev: false
 
   /@istanbuljs/load-nyc-config/1.1.0:
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -1494,7 +1494,7 @@ packages:
       '@nestjs/core': 9.0.3_nshdd465j44otlckzzkwiwr4za
       reflect-metadata: 0.1.13
       rxjs: 7.5.6
-      typeorm: 0.3.7_pa4ea3wjef6s4gsskhbyci3cte
+      typeorm: 0.3.7_hvm534w3cjfabpdqhsdt7hc5be
       uuid: 8.3.2
     dev: false
 
@@ -4853,32 +4853,6 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-prettier/8.5.0_eslint@8.19.0:
-    resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
-    hasBin: true
-    peerDependencies:
-      eslint: '>=7.0.0'
-    dependencies:
-      eslint: 8.19.0
-    dev: true
-
-  /eslint-plugin-prettier/4.2.1_7uxdfn2xinezdgvmbammh6ev5i:
-    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      eslint: '>=7.28.0'
-      eslint-config-prettier: '*'
-      prettier: '>=2.0.0'
-    peerDependenciesMeta:
-      eslint-config-prettier:
-        optional: true
-    dependencies:
-      eslint: 8.19.0
-      eslint-config-prettier: 8.5.0_eslint@8.19.0
-      prettier: 2.7.1
-      prettier-linter-helpers: 1.0.0
-    dev: true
-
   /eslint-plugin-react/7.30.1_eslint@7.32.0:
     resolution: {integrity: sha512-NbEvI9jtqO46yJA3wcRF9Mo0lF9T/jhdHqhCHXiXtD+Zcb98812wvokjWpU7Q4QH5edo6dmqrukxVvWWXHlsUg==}
     engines: {node: '>=4'}
@@ -6393,6 +6367,23 @@ packages:
       lodash.isarguments: 3.1.0
       p-map: 2.1.0
       redis-commands: 1.7.0
+      redis-errors: 1.2.0
+      redis-parser: 3.0.0
+      standard-as-callback: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /ioredis/5.2.0:
+    resolution: {integrity: sha512-a1E7qDtuuI+We60TLIm3TMrH5auIhbfINXYag6ZdB+mGJnH8rbmDOpr1V7iUvQQ7pWnEDYI/KXmia5IemsNJEQ==}
+    engines: {node: '>=12.22.0'}
+    dependencies:
+      '@ioredis/commands': 1.1.1
+      cluster-key-slot: 1.1.0
+      debug: 4.3.4
+      denque: 2.0.1
+      lodash.defaults: 4.2.0
+      lodash.isarguments: 3.1.0
       redis-errors: 1.2.0
       redis-parser: 3.0.0
       standard-as-callback: 2.1.0
@@ -9560,13 +9551,6 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier-linter-helpers/1.0.0:
-    resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      fast-diff: 1.2.0
-    dev: true
-
   /prettier/2.7.1:
     resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
@@ -11455,7 +11439,7 @@ packages:
   /typedarray/0.0.6:
     resolution: {integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=}
 
-  /typeorm/0.3.7_pa4ea3wjef6s4gsskhbyci3cte:
+  /typeorm/0.3.7_hvm534w3cjfabpdqhsdt7hc5be:
     resolution: {integrity: sha512-MsPJeP6Zuwfe64c++l80+VRqpGEGxf0CkztIEnehQ+CMmQPSHjOnFbFxwBuZ2jiLqZTjLk2ZqQdVF0RmvxNF3Q==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
@@ -11522,6 +11506,7 @@ packages:
       debug: 4.3.4
       dotenv: 16.0.1
       glob: 7.2.3
+      ioredis: 5.2.0
       js-yaml: 4.1.0
       mkdirp: 1.0.4
       mysql2: 2.3.3
