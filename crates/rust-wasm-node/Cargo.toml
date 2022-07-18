@@ -7,15 +7,12 @@ version = "0.0.0"
 crate-type = ["cdylib"]
 
 [dependencies]
-napi = { version = "2.2.0", default-features = false, features = ["napi4"] }
-napi-derive = "2.2.0"
-imager = "0.3.2"
-image = "0.24.2"
-oxipng = "5.0.1"
-imagequant = "4.0.0"
+napi = { version = "^2.2.0", default-features = false, features = ["napi4"] }
+napi-derive = "^2.2.0"
+imager = "^0.3.2"
+image = "^0.24.2"
+oxipng = "^5.0.1"
+imagequant = "^4"
 
 [build-dependencies]
-napi-build = "1.2.1"
-
-[profile.release]
-lto = true
+napi-build = "^2"
