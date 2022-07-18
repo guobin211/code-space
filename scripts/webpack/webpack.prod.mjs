@@ -28,7 +28,7 @@ const prodConfig = merge(devConfig, {
         },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
+          name: 'vendors',
           chunks: 'all'
         }
       }
