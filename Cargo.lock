@@ -337,7 +337,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "app_libs"
+name = "app-libs"
 version = "0.1.0"
 dependencies = [
  "json5",
@@ -346,7 +346,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "app_server"
+name = "app-server"
 version = "0.1.0"
 dependencies = [
  "actix",
@@ -655,9 +655,9 @@ dependencies = [
 
 [[package]]
 name = "bytemuck_derive"
-version = "1.1.0"
+version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "562e382481975bc61d11275ac5e62a19abd00b0547d99516a415336f183dcd0e"
+checksum = "cfd2f4180c5721da6335cc9e9061cce522b87a35e51cc57636d28d22a9863c80"
 dependencies = [
  "proc-macro2 1.0.40",
  "quote 1.0.20",
@@ -1656,15 +1656,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
 
 [[package]]
-name = "fallible_collections"
-version = "0.4.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c195cf4b2285d3c993eb887b4dc56b0d5728bbe1d0f9a99c0ac6bec2da3e4d85"
-dependencies = [
- "hashbrown 0.12.3",
-]
-
-[[package]]
 name = "fastrand"
 version = "1.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2527,9 +2518,9 @@ dependencies = [
 
 [[package]]
 name = "image"
-version = "0.24.2"
+version = "0.24.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "28edd9d7bc256be2502e325ac0628bde30b7001b9b52e0abe31a1a9dc2701212"
+checksum = "7e30ca2ecf7666107ff827a8e481de6a132a9b687ed3bb20bb1c144a36c00964"
 dependencies = [
  "bytemuck",
  "byteorder",
@@ -2537,7 +2528,6 @@ dependencies = [
  "exr",
  "gif 0.11.4",
  "jpeg-decoder 0.2.6",
- "num-iter",
  "num-rational 0.4.1",
  "num-traits",
  "png 0.17.5",
@@ -2563,12 +2553,11 @@ dependencies = [
 
 [[package]]
 name = "imagequant"
-version = "4.0.0"
+version = "4.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "49f533cecb7eb061d19dee3c938d0e302c02193270497483e1b662a0a1a5e343"
+checksum = "fd9c246b5e902559d1f619b08a08f872cb88b03afe21ca9ec0df146f2fb1d34d"
 dependencies = [
  "arrayvec",
- "fallible_collections",
  "noisy_float",
  "once_cell",
  "rayon",
@@ -4551,7 +4540,7 @@ dependencies = [
 name = "rust-wasm-node"
 version = "0.0.0"
 dependencies = [
- "image 0.24.2",
+ "image 0.24.3",
  "imagequant",
  "imager",
  "napi",
