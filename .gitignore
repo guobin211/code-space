@@ -16,7 +16,6 @@ local
 cache
 .cache
 .idea
-.vscode
 .dist
 .out
 .swc
