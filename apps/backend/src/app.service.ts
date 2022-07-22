@@ -1,19 +1,29 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { AppConfig } from './config/app.config';
+import { Request } from 'express';
+
+export type JSONObject = Record<string, any>;
 
 @Injectable()
 export class AppService {
-  private config: AppConfig;
-  constructor(private configService: ConfigService) {
-    this.config = Object.assign({}, this.configService) as any;
-  }
-
-  getConfig(): AppConfig {
-    return this.config;
-  }
-
-  getIndex(): string {
-    return 'Hello NestJS!';
+  /**
+   * 获取请求信息
+   * @param request Request
+   * @returns
+   */
+  getRequestInfo(request: Request): JSONObject {
+    const cookies = request['cookies'];
+    const url = request['url'];
+    const headers = request['headers'];
+    const userAgent = headers['user-agent'];
+    const host = headers['host'];
+    const conn = request['socket'] || request['connection'];
+    const ip = headers['X-Client-IP'] || headers['X-Forwarded-For'] || conn['remoteAddress'];
+    return {
+      cookies,
+      userAgent,
+      host,
+      ip,
+      url,
+    }
   }
 }
