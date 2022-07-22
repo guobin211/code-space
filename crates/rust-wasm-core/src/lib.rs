@@ -2,7 +2,6 @@
 extern crate lazy_static;
 
 use js_sys::*;
-use std::iter::Iterator;
 use wasm_bindgen::prelude::*;
 
 use crate::utils::safe_encode;
@@ -17,20 +16,20 @@ mod utils;
 // 浏览器平台全局函数
 #[wasm_bindgen]
 extern "C" {
-    /// 闭包函数
+    // 闭包函数
     fn takes_immutable_closure(f: &dyn Fn());
 
     fn takes_mutable_closure(f: &mut dyn FnMut());
-    /// 通过闭包函数与js交互
-    /// rust中调用js的函数
-    /// ```js
-    ///  window.takes_closure_parse_to_string = (fn) => {
-    ///    const result = fn(x);
-    ///    console.log(result);
-    ///  }
-    /// ```
+    // 通过闭包函数与js交互
+    // rust中调用js的函数
+    // ```js
+    //  window.takes_closure_parse_to_string = (fn) => {
+    //    const result = fn(x);
+    //    console.log(result);
+    //  }
+    // ```
     fn takes_closure_parse_to_string(x: &dyn Fn(String) -> String);
-    /// 在rust中使用浏览器API console.log
+    // 在rust中使用浏览器API console.log
     #[wasm_bindgen(js_namespace = console, js_name = log)]
     fn console_log(s: &str);
 }
