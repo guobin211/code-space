@@ -14,14 +14,14 @@ export interface EnvConfig {
   SQL_PASSWORD: string;
 }
 
-export interface AppConfig extends EnvConfig {}
+export type AppConfig = EnvConfig
 
 let config: EnvConfig;
 export const IS_PROD = process.env.NODE_ENV === 'production';
 
 export function getEnvConfig(): Partial<EnvConfig> {
   if (!config) {
-    const {error, parsed} = dotenv.config();
+    const { error, parsed } = dotenv.config();
     if (error) {
       console.error('getEnvConfig', error);
       process.exit(-1);

@@ -21,12 +21,14 @@ export function setUpMySQL() {
     username: SQL_NAME,
     password: SQL_PASSWORD,
     database: 'nestjs',
-    entities: [join(__dirname, '../**/*.entity{.ts,.js}'), join(__dirname, '../**/**/*.entity{.ts,.js}')],
+    entities: [
+      join(__dirname, '../**/*.entity{.ts,.js}'),
+      join(__dirname, '../**/**/*.entity{.ts,.js}'),
+    ],
     connectorPackage: 'mysql2',
     synchronize: true,
     autoLoadEntities: true,
     retryAttempts: IS_PROD ? 9 : 3,
   };
-  console.log('MySQL config:', config);
   return TypeOrmModule.forRoot(config);
 }

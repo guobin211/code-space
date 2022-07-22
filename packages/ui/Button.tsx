@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 
 export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-  type: 'primary' | 'error' | 'pure'
+  type?: 'primary' | 'error' | 'pure'
 };
 
 export const Button: React.FC<ButtonProps> = (props) => {
