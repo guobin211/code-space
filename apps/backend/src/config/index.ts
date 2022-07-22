@@ -1,7 +1,5 @@
-import { setUpConfig, getEnvConfig } from './env.config';
-import { setUpMongoDB } from './mongodb.config';
-import { setUpMySQL } from './mysql.config';
-import { setUpRedis } from './redis.config';
+import { setUpConfig, getEnvConfig } from './app.config';
+import { setUpMongoDB, setUpMySQL, setUpRedis } from './database.config';
 import { setUpSwagger } from './swagger.config';
 
 export {
