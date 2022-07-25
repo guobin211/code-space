@@ -1,6 +1,6 @@
 import { MongooseModule } from '@nestjs/mongoose';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { getEnvConfig, IS_PROD } from './app.config';
+import { IS_PROD } from './app.config';
 import { join } from 'path';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
