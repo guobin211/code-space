@@ -43,8 +43,7 @@
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-	"initializeCommand": "npm i -g pnpm",
-	"postCreateCommand": "rustc --version && node -v && pnpm -v",
+	"postCreateCommand": "npm i -g pnpm",
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
