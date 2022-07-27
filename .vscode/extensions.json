@@ -1,9 +1,15 @@
 {
   "recommendations": [
-    "rust-lang.rust-analyzer",
     "dbaeumer.vscode-eslint",
     "streetsidesoftware.code-spell-checker",
     "bungcip.better-toml",
-    "vadimcn.vscode-lldb"
+    "vadimcn.vscode-lldb",
+    "serayuzgur.crates",
+    "ms-azuretools.vscode-docker",
+    "usernamehw.errorlens",
+    "visualstudioexptteam.vscodeintellicode",
+    "esbenp.prettier-vscode",
+    "swellaby.vscode-rust-test-adapter",
+    "dustypomerleau.rust-syntax"
   ]
 }
