@@ -8,6 +8,7 @@ mod api;
 mod config;
 mod database;
 mod models;
+mod middleware;
 
 /**
  * 1. read config file
