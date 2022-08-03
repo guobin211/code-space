@@ -2,5 +2,5 @@ const withTM = require("next-transpile-modules")(["ui"]);
 
 module.exports = withTM({
   reactStrictMode: true,
-  eslintMode: false,
+  eslintMode: false
 });
