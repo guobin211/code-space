@@ -12,6 +12,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
@@ -19,5 +22,5 @@
   "json.schemaDownload.enable": true,
   "cSpell.words": [
     "typeorm"
-  ]
+  ],
 }

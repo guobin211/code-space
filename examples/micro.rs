@@ -1,3 +1,5 @@
+use std::any::type_name;
+
 // 过程宏 add!(1, 2)
 macro_rules! add {
     ($a: expr) => {{
@@ -50,6 +52,11 @@ struct Position {
     pub y: i32,
 }
 
+// 读取变量类型
+pub fn type_of<T>(_: T) -> &'static str {
+    type_name::<T>()
+}
+
 ///
 ///  item 一个项（item），像一个函数，结构体，模块等。
 ///  block 一个块 （block）（即一个语句块或一个表达式，由花括号所包围）
@@ -92,4 +99,7 @@ fn main() {
     };
 
     println!("rect width is {}", rect.width);
+
+    println!("{:?}", type_of(a));
+    println!("{:?}", type_of(&rect));
 }
