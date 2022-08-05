@@ -1,1 +1,1 @@
-declare const Deno: Record<string, any>;
+declare const Deno: Record<string, Record<string, any>>;

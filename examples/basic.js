@@ -1,13 +1,8 @@
-function log(params) {
-  this.Deno.core.print(params);
+function main() {
+  console.log('log from basic \n');
+  console.warn('warn from basic \n');
+  console.info('info from basic \n');
+  console.error('error from basic \n');
 }
 
-log("hello deno")
-
-async function getDate() {
-  return new Promise(resolve => {
-    resolve('call promise');
-  });
-}
-
-getDate().then(log);
+main();
