@@ -43,6 +43,6 @@ export function setUpMySQL() {
         retryAttempts: IS_PROD ? 9 : 3,
       };
       return config;
-    }
+    },
   });
 }

@@ -12,7 +12,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "clear": "turbo run clear",
-    "tsnode": "ts-node-esm scripts/sw.ts"
+    "tsnode": "ts-node-esm scripts/sw.ts",
+    "format": "prettier --loglevel=warn --write \"**/*.{mjs,ts,tsx,scss,md}\""
   },
   "type": "module",
   "dependencies": {
@@ -64,7 +65,7 @@
     "postcss": "^8.4.14",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^6.7.1",
-    "prettier": "latest",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.77.2",
     "sass": "^1.54.3",

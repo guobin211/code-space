@@ -6,8 +6,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const DEFAULT_PKG = {
   NAME: 'MyLib',
   VERSION: '0.0.1',
-  TYPE: 'umd'
-}
+  TYPE: 'umd',
+};
 
 /**
  * webpack打包依赖库的配置
@@ -17,37 +17,39 @@ const DEFAULT_PKG = {
  */
 export const getPKGConfig = (config, pkg = DEFAULT_PKG) => {
   const { NAME = 'MyLib', VERSION = '0.0.1', TYPE = 'umd' } = pkg;
-  return merge(devConfig, {
-    output: {
-      clean: true,
-      library: NAME,
-      libraryTarget: TYPE,
-      filename: `${NAME}@${VERSION}.${TYPE}.js`,
-      publicPath: '/'
-    },
-    optimization: {
-      minimizer: [
-        new CssMinimizerPlugin()
-      ]
-    },
-    plugins: [
-      new MiniCssExtractPlugin({
-        filename: `${NAME}@${VERSION}.${TYPE}.css`,
-      })
-    ],
-    externals: [
-      {
-        // 字符串
-        react: 'react',
-        // 对象
-        lodash: {
-          commonjs: 'lodash',
-          amd: 'lodash',
-          root: '_',
-        },
+  return merge(
+    devConfig,
+    {
+      output: {
+        clean: true,
+        library: NAME,
+        libraryTarget: TYPE,
+        filename: `${NAME}@${VERSION}.${TYPE}.js`,
+        publicPath: '/',
       },
-    ]
-  }, config)
-}
+      optimization: {
+        minimizer: [new CssMinimizerPlugin()],
+      },
+      plugins: [
+        new MiniCssExtractPlugin({
+          filename: `${NAME}@${VERSION}.${TYPE}.css`,
+        }),
+      ],
+      externals: [
+        {
+          // 字符串
+          react: 'react',
+          // 对象
+          lodash: {
+            commonjs: 'lodash',
+            amd: 'lodash',
+            root: '_',
+          },
+        },
+      ],
+    },
+    config,
+  );
+};
 
-export default getPKGConfig
+export default getPKGConfig;

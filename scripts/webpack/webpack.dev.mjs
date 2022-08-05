@@ -12,11 +12,7 @@ const config = {
   target: ['web', 'es2015'],
   stats: 'errors-warnings',
   module: {
-    rules: [
-      ...getCssLoader(),
-      ...getAssetsLoader(),
-      getTsxLoader()
-    ]
+    rules: [...getCssLoader(), ...getAssetsLoader(), getTsxLoader()],
   },
   optimization: {
     splitChunks: {
@@ -24,11 +20,11 @@ const config = {
         commons: {
           test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|redux|react-redux)[\\/]/,
           name: 'commons',
-          chunks: 'all'
-        }
-      }
+          chunks: 'all',
+        },
+      },
     },
-    runtimeChunk: 'single'
+    runtimeChunk: 'single',
   },
   experiments: {
     asyncWebAssembly: true,
@@ -37,7 +33,7 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'WebpackSwcTemplate',
-    })
+    }),
   ],
   output: {
     filename: 'webpack/js/[name].bundle.js',
@@ -46,8 +42,8 @@ const config = {
     wasmLoading: 'fetch',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
-  }
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+  },
 };
 
 /**

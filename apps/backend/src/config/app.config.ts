@@ -14,7 +14,7 @@ export interface EnvConfig {
   SQL_PASSWORD: string;
 }
 
-export type AppConfig = EnvConfig
+export type AppConfig = EnvConfig;
 
 let config: EnvConfig;
 export const IS_PROD = process.env.NODE_ENV === 'production';

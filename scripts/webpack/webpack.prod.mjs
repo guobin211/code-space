@@ -13,10 +13,10 @@ const prodConfig = merge(devConfig, {
   output: {
     filename: 'webpack/js/[name].[contenthash].js',
     clean: true,
-    publicPath: '/'
+    publicPath: '/',
   },
   performance: {
-    maxEntrypointSize: 500000
+    maxEntrypointSize: 500000,
   },
   optimization: {
     splitChunks: {
@@ -24,34 +24,28 @@ const prodConfig = merge(devConfig, {
         commons: {
           test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom|redux|react-redux)[\\/]/,
           name: 'commons',
-          chunks: 'all'
+          chunks: 'all',
         },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all'
-        }
-      }
+          chunks: 'all',
+        },
+      },
     },
     runtimeChunk: 'single',
-    minimizer: [
-      new CssMinimizerPlugin()
-    ]
+    minimizer: [new CssMinimizerPlugin()],
   },
   module: {
-    rules: [
-      ...getCssLoader(MODE),
-      ...getAssetsLoader(MODE),
-      getTsxLoader()
-    ]
+    rules: [...getCssLoader(MODE), ...getAssetsLoader(MODE), getTsxLoader()],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'webpack/css/[name].[contenthash].css',
-      chunkFilename: 'webpack/css/[id].[contenthash].css'
-    })
+      chunkFilename: 'webpack/css/[id].[contenthash].css',
+    }),
   ],
-  devServer: {}
+  devServer: {},
 });
 
 export function getProdConfig(otherConfig = {}) {

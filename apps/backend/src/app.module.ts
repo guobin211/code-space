@@ -6,19 +6,12 @@ import { setUpConfig, setUpMongoDB, setUpMySQL } from './config';
 import { CookieLoggerMiddleware } from './middleware/cookie.logger';
 
 @Module({
-  imports: [
-    setUpConfig(),
-    setUpMongoDB(),
-    setUpMySQL(),
-    SharedModule,
-  ],
+  imports: [setUpConfig(), setUpMongoDB(), setUpMySQL(), SharedModule],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(CookieLoggerMiddleware)
-      .forRoutes(AppController);
+    consumer.apply(CookieLoggerMiddleware).forRoutes(AppController);
   }
 }

@@ -20,7 +20,7 @@ function Person(name, age) {
 Person.prototype.toString = function () {
   console.log('Person.prototype.toString', this);
   return `[name: ${this.name}, age: ${this.age}]`;
-}
+};
 
 function main() {
   const p = new Person('John', 30);
@@ -31,4 +31,4 @@ function main() {
   console.log(p1.toString());
 }
 
-main()
+main();

@@ -17,13 +17,16 @@ export class AppService {
     const userAgent = headers['user-agent'];
     const host = headers['host'];
     const conn = request['socket'] || request['connection'];
-    const ip = headers['X-Client-IP'] || headers['X-Forwarded-For'] || conn['remoteAddress'];
+    const ip =
+      headers['X-Client-IP'] ||
+      headers['X-Forwarded-For'] ||
+      conn['remoteAddress'];
     return {
       cookies,
       userAgent,
       host,
       ip,
       url,
-    }
+    };
   }
 }

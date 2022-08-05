@@ -9,16 +9,16 @@ class Person {
  */
 Person.prototype.getName = function () {
   return this.name;
-}
+};
 class Man extends Person {
   constructor(name) {
     super(name);
-    this.name = name
-    this.age = 22
+    this.name = name;
+    this.age = 22;
   }
 }
 
-const jack = new Person('jack')
+const jack = new Person('jack');
 console.log('Person =============== ');
 for (const key in jack) {
   const element = jack[key];
@@ -29,7 +29,7 @@ for (const key in jack) {
   }
 }
 
-const tom = new Man('tom')
+const tom = new Man('tom');
 console.log('Man================== ');
 for (const key in tom) {
   const element = tom[key];
