@@ -1,5 +1,5 @@
 import { merge } from 'webpack-merge';
-import { devConfig } from './webpack.dev.mjs';
+import devConfig from './webpack.dev.mjs';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
