@@ -28,10 +28,43 @@ const printGlobal = () => {
   }
 };
 
+// sleep
+async function sleep(ms) {
+  /**
+    clearInterval function
+    clearTimeout function
+    setInterval function
+    setTimeout function
+    queueMicrotask function
+    performance object
+    clearImmediate function
+    setImmediate function
+   */
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function testEventLoop() {
+  console.log('start');
+  setTimeout(() => {
+    console.log('1');
+  }, 1);
+  await sleep(1000);
+  new Promise(() => {
+    console.log('2');
+  });
+  setImmediate(() => {
+    console.log('3');
+  });
+  console.log('end');
+}
+
 async function main() {
   console.log('__filename', __filename);
   console.log('__dirname', __dirname);
   printGlobal();
+  testEventLoop();
 }
 
 main();
