@@ -32,7 +32,6 @@ members = [
     "crates/app-client",
     "crates/app-server",
     "crates/app-libs",
-    "crates/rust-wasm-core",
     "crates/rust-wasm-node",
     "crates/rust-wasm-web",
 ]

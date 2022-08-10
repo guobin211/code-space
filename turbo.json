@@ -15,6 +15,9 @@
     "dev": {
       "cache": false
     },
+    "update": {
+      "cache": false
+    },
     "clear": {
       "cache": false
     }

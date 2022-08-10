@@ -3885,18 +3885,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust-wasm-core"
-version = "0.1.0"
-dependencies = [
- "console_error_panic_hook",
- "js-sys",
- "lazy_static",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "wee_alloc",
-]
-
-[[package]]
 name = "rust-wasm-node"
 version = "0.0.0"
 dependencies = [
@@ -3914,6 +3902,7 @@ name = "rust-wasm-web"
 version = "0.1.0"
 dependencies = [
  "console_error_panic_hook",
+ "js-sys",
  "lazy_static",
  "oxipng",
  "wasm-bindgen",

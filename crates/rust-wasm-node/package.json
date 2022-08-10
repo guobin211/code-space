@@ -9,8 +9,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@napi-rs/cli": "^2.6",
-    "ava": "^4.0.1"
+    "@napi-rs/cli": "^2.11",
+    "ava": "^4.3"
   },
   "engines": {
     "node": ">= 10"
@@ -21,6 +21,7 @@
     "build:debug": "napi build --platform",
     "prepublishOnly": "napi prepublish -t npm",
     "test": "ava",
-    "version": "napi version"
+    "version": "napi version",
+    "update": "cargo update"
   }
 }
