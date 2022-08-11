@@ -6,7 +6,6 @@ extern crate lazy_static;
 pub mod adapter;
 pub mod api;
 pub mod encoder;
-pub mod image;
 
 #[cfg(feature = "wee_alloc")]
 #[global_allocator]

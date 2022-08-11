@@ -3904,7 +3904,6 @@ dependencies = [
  "console_error_panic_hook",
  "js-sys",
  "lazy_static",
- "oxipng",
  "wasm-bindgen",
  "wasm-bindgen-test",
  "wee_alloc",
