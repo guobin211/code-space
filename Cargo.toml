@@ -29,7 +29,6 @@ proptest = "^1"
 [workspace]
 members = [
     "crates/app-server",
-    "crates/app-libs",
     "crates/rust-wasm-node",
     "crates/rust-wasm-web",
 ]
