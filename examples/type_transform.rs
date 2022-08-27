@@ -38,6 +38,8 @@ impl From<Egg> for Chicken {
     }
 }
 
+fn main() {}
+
 #[cfg(test)]
 mod tests {
     use super::*;

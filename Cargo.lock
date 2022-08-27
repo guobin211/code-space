@@ -311,15 +311,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bb07d2053ccdbe10e2af2995a2f116c1330396493dc1269f6a91d0ae82e19704"
 
 [[package]]
-name = "app-client"
-version = "0.1.0"
-dependencies = [
- "hyper 0.14.20",
- "tokio 1.20.0",
- "url 2.2.2",
-]
-
-[[package]]
 name = "app-libs"
 version = "0.1.0"
 dependencies = [
@@ -1306,9 +1297,9 @@ dependencies = [
 
 [[package]]
 name = "deno_core"
-version = "0.146.0"
+version = "0.148.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "88475da37fe0544b7372fd4705560df496498eb5eeb40ce19bfe7787ed0600ca"
+checksum = "8c6af1950eecb34836f6a6ba2a69de4105bb109fe57e45a329ba63b8b6d9a0cc"
 dependencies = [
  "anyhow",
  "deno_ops",
@@ -1329,9 +1320,9 @@ dependencies = [
 
 [[package]]
 name = "deno_ops"
-version = "0.24.0"
+version = "0.26.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e217fd2f9a61bc581f6b13868a46ef800efb7532348fd86cc4fe49204d203ea6"
+checksum = "4829d69dd689e487c9b2d36b7698a3f6266f7677ad0c4dead9480efbbadd8f01"
 dependencies = [
  "once_cell",
  "proc-macro-crate",
@@ -4157,9 +4148,9 @@ dependencies = [
 
 [[package]]
 name = "serde_v8"
-version = "0.57.0"
+version = "0.59.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b3c3efa9cff97d5a543df0508c37af619e422fb92eb525f38d255d46df7a0eb7"
+checksum = "4cefcd409ebe3d7c4e646cee54fc0f90ea33fb9cc9586d8ffff5ed1d997de1d5"
 dependencies = [
  "bytes 1.1.0",
  "derive_more",
@@ -5073,9 +5064,9 @@ dependencies = [
 
 [[package]]
 name = "v8"
-version = "0.47.1"
+version = "0.49.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "be156dece7a023d5959a72dc0d398d6c95100ec601a2cea10d868da143e85166"
+checksum = "5a1cbad73336d67babcbe5e3b03c907c8d2ff77fc6f997570af219bbd9fdb6ce"
 dependencies = [
  "bitflags",
  "fslock",

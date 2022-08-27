@@ -20,6 +20,7 @@
   },
   "ignorePatterns": [
     "*.config.js",
+    "*.config.cjs",
     ".eslintrc.js",
     ".vscode",
     ".idea",

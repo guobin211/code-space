@@ -39,6 +39,8 @@ where
     (ptr, size)
 }
 
+fn main() {}
+
 #[cfg(test)]
 mod tests {
     use std::mem;

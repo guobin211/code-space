@@ -35,7 +35,7 @@ pub async fn run_js_file(filepath: &str) -> Result<(), AnyError> {
         extensions: vec![extension],
         ..Default::default()
     });
-    let runtime_code = include_str!("./runtime.js");
+    let runtime_code = include_str!("./v8_runtime.js");
     js_runtime
         .execute_script("[deno::runtime.js]", runtime_code)
         .unwrap();
@@ -65,7 +65,7 @@ pub fn run_js_code(code: &str) {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    run_js_file("examples/basic.js").await?;
+    run_js_file("examples/v8_test.js").await?;
     Ok(())
 }
 
