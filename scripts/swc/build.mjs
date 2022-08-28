@@ -13,54 +13,66 @@ const save = (name, data) => {
 };
 
 async function compileExample() {
-  const result = await swc.transformFile('./example.tsx', {
-    jsc: {
-      parser: {
-        syntax: 'typescript',
-        decorators: true,
-        dynamicImport: false,
-      },
-      transform: {
-        legacyDecorator: true,
-        decoratorMetadata: true,
-        optimizer: {
-          globals: {},
+  const file = path.join(__dirname, './example.tsx');
+  const result = await swc
+    .transformFile(file, {
+      jsc: {
+        parser: {
+          syntax: 'typescript',
+          decorators: true,
+          dynamicImport: false,
         },
+        transform: {
+          legacyDecorator: true,
+          decoratorMetadata: true,
+          optimizer: {
+            globals: {},
+          },
+        },
+        target: 'es5',
+        loose: false,
+        externalHelpers: false,
+        keepClassNames: false,
       },
-      target: 'es5',
-      loose: false,
-      externalHelpers: false,
-      keepClassNames: false,
-    },
-  });
+    })
+    .catch((err) => {
+      console.log('compileExample err', err);
+      return null;
+    });
   if (result) {
     save('dist/example.js', result.code);
   }
 }
 
 async function compileUMD() {
-  const result = await swc.transformFile('./android.ts', {
-    jsc: {
-      parser: {
-        syntax: 'typescript',
-        decorators: true,
+  const file = path.join(__dirname, './android.ts');
+  const result = await swc
+    .transformFile(file, {
+      jsc: {
+        parser: {
+          syntax: 'typescript',
+          decorators: true,
+        },
+        target: 'es5',
+        loose: false,
+        externalHelpers: true,
       },
-      target: 'es5',
-      loose: false,
-      externalHelpers: true,
-    },
-    module: {
-      type: 'umd',
-    },
-  });
+      module: {
+        type: 'umd',
+      },
+    })
+    .catch((err) => {
+      console.log('compileUMD err', err);
+      return null;
+    });
   if (result) {
     save('dist/android.js', result.code);
   }
 }
 
-async function main() {
-  compileUMD();
-  compileExample();
-}
-
-main();
+// ===========================================================================
+// Main Function
+(async () => {
+  await Promise.all([compileUMD(), compileExample()]);
+  console.log('done');
+})();

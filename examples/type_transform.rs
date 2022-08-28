@@ -54,4 +54,14 @@ mod tests {
         assert_eq!(ck.name, "egg");
         dbg!(ck);
     }
+
+    #[test]
+    fn test_type() {
+        let slice = "hello";
+        let str_ref: &str = slice;
+        let mut str_ref_mut: String = str_ref.into();
+        str_ref_mut.push_str(" world");
+        println!("{}", str_ref_mut);
+        assert_eq!(str_ref_mut, "hello world");
+    }
 }

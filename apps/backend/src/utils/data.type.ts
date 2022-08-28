@@ -4,6 +4,6 @@ export type JSONObject = Record<string, JSONValue>;
 
 export type JSObject = Record<string, any>;
 
-export type JSArray<T = any> = Array<T>;
+export type JSArray<T = any> = T[];
 
 export type Keys<T> = keyof T;
