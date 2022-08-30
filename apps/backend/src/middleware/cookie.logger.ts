@@ -8,7 +8,7 @@ export class CookieLoggerMiddleware implements NestMiddleware {
     if (Object.values(cookies).length) {
       console.log(`Cookies: ${JSON.stringify(cookies)}`);
     } else {
-      console.log(`Cookies: Empty`);
+      console.log('Cookies: Empty');
     }
     next();
   }

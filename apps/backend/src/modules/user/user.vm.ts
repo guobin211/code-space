@@ -1,10 +1,17 @@
 import { dropProps } from 'src/utils/mapper';
 import type { UserEntity } from './user.entity';
 
-export type UserVM = Omit<UserEntity, 'password' | 'hashPassword'> & {
+type UserProps = Omit<UserEntity, 'password' | 'hashPassword'> & {
   createAt: number;
 };
 
-export function buildUserVM(user: UserEntity): UserVM {
-  return dropProps(user, 'password', 'hashPassword');
+export class UserVM implements UserProps {
+  id: number;
+  username: string;
+  email: string;
+  image: string;
+  createAt: number;
+  static fromEntity(entity: UserEntity): UserVM {
+    return dropProps(entity, ['password', 'hashPassword']);
+  }
 }

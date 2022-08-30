@@ -31,7 +31,7 @@ async fn main() -> Result<()> {
             App::new()
                 .app_data(web::Data::new(db.clone()))
                 .service(Files::new("/", public_dir.to_str().unwrap()).use_last_modified(true))
-                .service(web::scope("/api/users").configure(api::users::config))
+                .service(web::scope("/api/users").configure(api::user::config))
         })
         .bind(server_config.origin)?
         .run()

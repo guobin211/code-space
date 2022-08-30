@@ -3,7 +3,7 @@ import { IsEmail } from 'class-validator';
 import { createHmac } from 'crypto';
 
 const secret = 'amd_psd';
-export async function hashName(name: string) {
+export async function hashUserName(name: string) {
   return createHmac('md5', secret).update(name).digest('hex');
 }
 
@@ -27,6 +27,6 @@ export class UserEntity {
 
   @BeforeInsert()
   async hashPassword() {
-    this.password = await hashName(this.password);
+    this.password = await hashUserName(this.password);
   }
 }
