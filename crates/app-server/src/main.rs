@@ -1,14 +1,14 @@
 extern crate core;
 
-use actix_files::Files;
-use actix_web::{web, App, HttpServer};
+use actix_web::{web, App, HttpServer, Responder};
 use anyhow::Result;
 
 mod api;
 mod config;
 mod database;
-mod models;
+mod home;
 mod middleware;
+mod models;
 
 /**
  * 1. read config file
@@ -25,12 +25,12 @@ async fn main() -> Result<()> {
         let db = server_config.get_database(&client, server_config.mongo_db_name);
         println!("server run at {}", server_config.local_url);
         let project_dir = std::env::current_dir()?;
-        let public_dir = project_dir.join("app_server").join("public");
         println!("project dir: {:?}", project_dir);
         HttpServer::new(move || {
             App::new()
                 .app_data(web::Data::new(db.clone()))
-                .service(Files::new("/", public_dir.to_str().unwrap()).use_last_modified(true))
+                .route("/", web::get().to(index))
+                .route("/home", web::get().to(home::home_page))
                 .service(web::scope("/api/users").configure(api::user::config))
         })
         .bind(server_config.origin)?
@@ -38,4 +38,8 @@ async fn main() -> Result<()> {
         .await?;
     }
     Ok(())
+}
+
+async fn index() -> impl Responder {
+    "Hello world!"
 }

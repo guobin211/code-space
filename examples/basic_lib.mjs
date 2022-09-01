@@ -1,3 +1,15 @@
+// ===========================================================================
+// es6 module
+/**
+ * @description
+ * ```
+ * Object.defineProperty(exports, "__esModule", { value: true });
+ * Module {
+ *   default: {},
+ *   logger: {},
+ * }
+ * ```
+ */
 export const logger = {
   log: (...args) => {
     console.log('log.....');
