@@ -29,4 +29,8 @@ export class AppService {
       url,
     };
   }
+
+  getTest(): string {
+    return 'Hello NestJS!';
+  }
 }

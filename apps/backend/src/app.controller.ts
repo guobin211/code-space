@@ -12,7 +12,7 @@ export class AppController {
   }
 
   @Get('/test')
-  getTest(@Req() request: Request) {
-    return this.appService.getRequestInfo(request);
+  getTest() {
+    return this.appService.getTest();
   }
 }

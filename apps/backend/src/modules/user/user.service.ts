@@ -13,7 +13,7 @@ export class UserService {
   ) {}
 
   async create(dto: CreateUserDTO): Promise<UserVM> {
-    const result = await this.userRepository.create(dto);
+    const result = this.userRepository.create(dto);
     return UserVM.fromEntity(result);
   }
 }
