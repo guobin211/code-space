@@ -1,4 +1,6 @@
 export class Person {
+  // 私有属性
+  #meta;
   constructor(name, age) {
     this.name = name;
     this.age = age;
@@ -14,6 +16,7 @@ export class Person {
 
   set rating(value) {
     this._rating = value;
+    this.#log();
   }
 
   printRating() {
@@ -23,6 +26,11 @@ export class Person {
   toString() {
     console.log('Person.prototype.toString', this);
     return `[name: ${this.name}, age: ${this.age}]`;
+  }
+
+  // 私有方法
+  #log() {
+    console.log('Person.private.log', this.rating);
   }
 }
 

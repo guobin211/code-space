@@ -54,3 +54,52 @@ map.get('fn')('p');
 object.fn('p');
 console.log('map', map);
 console.log('object', object);
+
+// ============================================================
+// WeakSet and WeakMap
+const weakSet = new WeakSet();
+class Person {
+  /**
+   * @param {string} name
+   */
+  constructor(name) {
+    this.name = name;
+    this.parent = null;
+    this.children = null;
+  }
+
+  valueOf() {
+    return this.name.length;
+  }
+
+  toString() {
+    return this.name;
+  }
+
+  /**
+   * for-of 遍历
+   */
+  [Symbol.iterator] = function* () {
+    yield this.name;
+    yield this.children;
+  };
+
+  get [Symbol.toStringTag]() {
+    return 'Person';
+  }
+}
+const jack = new Person('jack');
+const rose = new Person('rose');
+weakSet.add(jack);
+weakSet.add(rose);
+console.log('weakSet', weakSet.has({ name: 'jack' }));
+const jack1 = new Person('jack');
+console.log(jack === jack1);
+console.log('jack is : ', jack);
+console.log(jack + 1);
+
+for (const value of jack) {
+  console.log('value', value);
+}
+console.log('typeof : ', typeof jack);
+console.log(Object.prototype.toString.call(jack));
