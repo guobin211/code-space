@@ -16,6 +16,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "preserve"
   }
 }

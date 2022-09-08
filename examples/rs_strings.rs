@@ -1,6 +1,23 @@
+use std::{fs::read_to_string, path::Path};
+
 fn main() {
     strings::test_strings();
     strings::test_row_str();
+    let __dirname = std::env::current_dir().unwrap();
+    let file = __dirname.join("src/views/home.rsx");
+    if let Some(str) = include_file(file) {
+        println!("str : {str}");
+    }
+}
+
+fn include_file(file: impl AsRef<Path>) -> Option<String> {
+    return match read_to_string(file) {
+        Ok(str) => Some(str),
+        Err(err) => {
+            println!("include_file error : {}", err);
+            None
+        }
+    };
 }
 
 mod strings {
