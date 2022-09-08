@@ -1,8 +1,8 @@
-((globalThis) => {
+((global) => {
   const { core } = this.Deno;
-  // ===========================================================================
+  // ============================================================
   // 注入全局变量 V8 Runtime
-  globalThis.console = {
+  global.console = {
     log: (...args) => {
       core.print(...args);
     },

@@ -48,10 +48,27 @@ export class Employee extends Person {
   }
 }
 
+export function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.printName = function () {
+  console.log('Animal.prototype.printName : ', this.name);
+};
+
+function getDate() {
+  if (new.target) {
+    throw new Error('getDate() can not be called with new');
+  }
+  return new Date().toLocaleString();
+}
+
 (() => {
   const employee = new Employee('张三', 18, 1000);
   console.log(employee);
   console.log(employee.toString());
   employee.rating = 100;
   employee.printRating();
+  console.log('getDate() : ', getDate());
+  new Animal('dog').printName();
 })();

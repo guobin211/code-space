@@ -15,8 +15,11 @@
       return 'Hello, World!';
     },
     valueOf() {
-      return 'Hello, World!';
-    }
-  }
+      return 1;
+    },
+  };
   console.log(data === source);
-})()
+  // 自动类型转换
+  // console.log('magic number : ', data == 1);
+  console.log(data === 1);
+})();
