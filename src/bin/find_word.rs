@@ -12,7 +12,8 @@ pub struct AppArgs {
     #[clap(short, long, default_value = "name")]
     pub search: String,
 }
-// find words in input file
+
+/// 找出文件中出现word的次数
 pub fn find_word(filename: &str, word: &str) {
     if word.is_empty() || filename.is_empty() {
         return;
@@ -29,7 +30,7 @@ pub fn find_word(filename: &str, word: &str) {
                     count += 1;
                 }
             }
-            println!("find {} : {}", word, count);
+            println!("find word: {}, count: {}", word, count);
         }
         Err(_) => println!("No such file: {:?}", &file_path),
     }

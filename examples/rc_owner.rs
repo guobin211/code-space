@@ -43,6 +43,15 @@ pub fn log_and_change(p: &mut Person) {
     p.name = "Mary".to_string();
 }
 
+#[derive(Debug, Clone, Copy)]
+pub struct WithCopy {
+    pub value: u32,
+}
+
+pub fn takes_copy(age: u32) {
+    println!("{:?}", age);
+}
+
 fn main() {}
 
 #[cfg(test)]
