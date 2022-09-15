@@ -25,6 +25,13 @@ export const logger = {
   },
 };
 
+export function testSpeed(fn) {
+  const start = new Date();
+  fn();
+  const end = new Date();
+  console.log(`Time elapsed: ${(end - start) / 1000} seconds.`);
+}
+
 export default {
   logger,
 };

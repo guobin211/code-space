@@ -1,5 +1,5 @@
-import { parentPort, isMainThread, workerData } from 'node:worker_threads';
-import { StringDecoder } from 'node:string_decoder';
+import { parentPort, isMainThread, workerData } from 'worker_threads';
+import { StringDecoder } from 'string_decoder';
 
 const JOB_NAME = 'sort_array';
 

@@ -85,6 +85,35 @@ const fetchBaiduPromise = () => {
     });
 };
 
+export const toPromise = (fn) => {
+  if (fn instanceof Promise) {
+    return fn;
+  }
+  return (args) =>
+    new Promise((resolve) => {
+      resolve(fn(args));
+    });
+};
+
+/**
+ * 判断是async函数
+ * @param {function} fn
+ * @returns {boolean}
+ */
+export const isAsyncFunction = (fn) => {
+  if (typeof fn === 'function') {
+    const fnStr = fn.toString();
+    if (
+      Object.prototype.toString.call(fn) === '[object AsyncFunction]' ||
+      fnStr.startsWith('async function') ||
+      fnStr.includes('regenerator.default.async(function')
+    ) {
+      return true;
+    }
+  }
+  return false;
+};
+
 // Async Main Function
 (async () => {
   const result = await fetchHtml();
@@ -96,4 +125,5 @@ const fetchBaiduPromise = () => {
   time('fetchBaidu');
   fetchBaidu();
   timeEnd('fetchBaidu');
+  console.log('isAsyncFunction : ', isAsyncFunction(fetchBaidu));
 })();
