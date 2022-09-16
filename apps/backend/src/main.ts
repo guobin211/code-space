@@ -10,8 +10,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser());
   app.use(cookieLogger);
+  const port = envConfig.APP_PORT || 4200;
+  console.log(`backend : http://localhos:${port}`);
   await setUpSwagger(app);
-  await app.listen(envConfig.APP_PORT || 4200);
+  await app.listen(port);
 }
 
 bootstrap();
