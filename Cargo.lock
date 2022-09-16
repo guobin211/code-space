@@ -754,6 +754,7 @@ dependencies = [
  "itertools 0.10.4",
  "json5",
  "lazy_static",
+ "num_cpus",
  "proptest",
  "rand 0.8.5",
  "regex",

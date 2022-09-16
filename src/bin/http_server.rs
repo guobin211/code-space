@@ -39,12 +39,34 @@ fn main() {
     match TcpListener::bind(&tcp_port) {
         Ok(listener) => {
             println!("starting http server on http://{}", &tcp_port);
-            let pool = ThreadPool::new(4);
+            let cpu_count = num_cpus::get();
+            let pool = ThreadPool::new(cpu_count * 4);
+            let html = ResponseHtml {
+                hello: format!(
+                    "{}\r\nContent-Length: {}\r\n\r\n{}",
+                    RESPONSE_OK,
+                    HELLO.len(),
+                    HELLO
+                ),
+                not_found: format!(
+                    "{}\r\nContent-Length: {}\r\n\r\n{}",
+                    RESPONSE_NOT_FOUND,
+                    NOT_FOUND.len(),
+                    NOT_FOUND
+                ),
+            };
             for stream in listener.incoming() {
-                let stream = stream.unwrap();
-                pool.execute(|| {
-                    handle_connection(stream);
-                });
+                match stream {
+                    Ok(byte_stream) => {
+                        let html = html.clone();
+                        pool.execute(move || {
+                            handle_connection(byte_stream, &html);
+                        });
+                    }
+                    Err(e) => {
+                        println!("stream Error: {}", e);
+                    }
+                }
             }
         }
         Err(err) => {
@@ -54,31 +76,42 @@ fn main() {
     };
 }
 
-/// Job
-fn handle_connection(mut stream: TcpStream) {
-    let mut buffer = [0; 1024];
-    stream.read(&mut buffer).unwrap();
+#[derive(Clone)]
+pub struct ResponseHtml {
+    hello: String,
+    not_found: String,
+}
 
-    let get = REQUEST_GET.as_bytes();
-    if buffer.starts_with(get) {
-        let response = format!(
-            "{}\r\nContent-Length: {}\r\n\r\n{}",
-            RESPONSE_OK,
-            HELLO.len(),
-            HELLO
-        );
-        stream.write(response.as_bytes()).unwrap();
-        stream.flush().unwrap();
-    } else {
-        let response = format!(
-            "{}\r\nContent-Length: {}\r\n\r\n{}",
-            RESPONSE_NOT_FOUND,
-            NOT_FOUND.len(),
-            NOT_FOUND
-        );
-        stream.write(response.as_bytes()).unwrap();
-        stream.flush().unwrap();
-    }
+/// Job
+fn handle_connection(mut stream: TcpStream, html: &ResponseHtml) {
+    let mut buffer = [0; 1024];
+    match stream.read(&mut buffer) {
+        Ok(_) => {
+            let get = REQUEST_GET.as_bytes();
+            let data: &String;
+            if buffer.starts_with(get) {
+                data = &html.hello;
+            } else {
+                data = &html.not_found;
+            }
+            match stream.write(data.as_bytes()) {
+                Ok(_) => {
+                    match stream.flush() {
+                        Ok(_) => {}
+                        Err(err) => {
+                            println!("flush error: {}", err);
+                        }
+                    };
+                }
+                Err(err) => {
+                    println!("write error: {}", err);
+                }
+            }
+        }
+        Err(err) => {
+            println!("read error: {}", err);
+        }
+    };
 }
 
 pub struct ThreadPool {
@@ -107,8 +140,7 @@ impl ThreadPool {
         assert!(size > 0);
         let (tx, rx) = mpsc::channel::<Message>();
         let mut workers: Vec<Worker> = Vec::with_capacity(size);
-        let rx = Arc::new(Mutex::new(rx));
-        let receiver = rx.clone();
+        let receiver = make_shared_receiver(rx).clone();
 
         for id in 0..size {
             workers.push(Worker::new(id, Arc::clone(&receiver)));
@@ -145,13 +177,18 @@ impl Drop for ThreadPool {
     }
 }
 
+type SharedReceiver<T> = Arc<Mutex<mpsc::Receiver<T>>>;
+
+fn make_shared_receiver<T>(rx: mpsc::Receiver<T>) -> SharedReceiver<T> {
+    Arc::new(Mutex::new(rx))
+}
+
 impl Worker {
-    fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Message>>>) -> Worker {
+    fn new(id: usize, receiver: SharedReceiver<Message>) -> Worker {
         let thread = thread::spawn(move || loop {
             if let Ok(message) = receiver.lock().unwrap().recv() {
                 match message {
                     Message::NewJob(job) => {
-                        println!("Worker {} got a job; executing...", id);
                         job();
                     }
                     Message::Terminate => {
