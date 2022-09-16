@@ -1,6 +1,8 @@
 # Learn Rust 2022
 
-> Mozilla 主导开发的通用、编译型编程语言。
+- [rust](https://www.rust-lang.org/zh-CN/learn/get-started)
+- [crates](https://crates.io/)
+- [wiki](https://rustwiki.org/)
 
 ## 基础入门
 

@@ -1,0 +1,6 @@
+{
+  "name": "app-server",
+  "scripts": {
+    "dev": "cargo watch -x 'run --bin app-server'"
+  }
+}

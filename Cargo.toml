@@ -4,25 +4,32 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-clap = { version = "3.1.6", features = ["derive"] }
-serde = { version = "1.0", features = ["derive"] }
-itertools = "0.10.2"
-regex = "1"
-rand = "0.8.4"
-anyhow = "1.0.57"
-env_logger = "0.9.0"
-deno_core = "0.143"
 tokio = { version = "1", features = ["full"] }
+clap = { version = "^3", features = ["derive"] }
+serde = { version = "^1", features = ["derive"] }
+hyper = { version = "^0.14", features = ["full"] }
+config = "^0.13"
+serde_json = "^1"
+itertools = "^0.10"
+regex = "^1"
+rand = "^0.8"
+anyhow = "^1"
+env_logger = "^0.9"
+deno_core = "^0.149.0"
+tracing = "^0.1"
+tracing-subscriber = "^0.3"
+async-std="^1.12.0"
+lazy_static="^1.4.0"
+url= "^2.2"
+utf8_slice = "^1"
+json5="^0.4"
 
 [dev-dependencies]
-proptest = "1.0.0"
+proptest = "^1"
 
 [workspace]
 members = [
-    "crates/app_client",
-    "crates/app_server",
-    "crates/app_libs",
-    "crates/rust-wasm-core",
+    "crates/app-server",
     "crates/rust-wasm-node",
     "crates/rust-wasm-web",
 ]

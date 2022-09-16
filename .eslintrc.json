@@ -18,6 +18,27 @@
     "ecmaVersion": 13,
     "sourceType": "module"
   },
+  "ignorePatterns": [
+    "*.config.js",
+    "*.config.cjs",
+    ".eslintrc.js",
+    ".vscode",
+    ".idea",
+    ".swc",
+    ".next",
+    ".turbo",
+    ".cache",
+    "node_modules",
+    "cache",
+    "dist",
+    "build",
+    "target",
+    "out",
+    "pkg",
+    "npm",
+    "public",
+    "static"
+  ],
   "plugins": [
     "react",
     "@typescript-eslint"

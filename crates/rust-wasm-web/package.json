@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "build": "wasm-pack build --release",
-    "test": "cargo test"
+    "test": "cargo test",
+    "update": "cargo update"
   },
   "devDependencies": {
-    "wasm-pack": "^0.10.2"
+    "wasm-pack": "^0.10.3"
   }
 }

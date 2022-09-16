@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "bungcip.better-toml",
+    "vadimcn.vscode-lldb",
+    "serayuzgur.crates",
+    "ms-azuretools.vscode-docker",
+    "usernamehw.errorlens",
+    "visualstudioexptteam.vscodeintellicode",
+    "esbenp.prettier-vscode",
+    "swellaby.vscode-rust-test-adapter",
+    "dustypomerleau.rust-syntax"
+  ]
+}

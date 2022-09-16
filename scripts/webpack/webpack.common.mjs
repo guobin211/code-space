@@ -5,23 +5,23 @@ export function getCssLoader(mode = 'development') {
     return [
       {
         test: /\.css/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.scss/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
-      }
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
     ];
   }
   return [
     {
       test: /\.css/i,
-      use: ['style-loader', 'css-loader']
+      use: ['style-loader', 'css-loader'],
     },
     {
       test: /\.scss/i,
-      use: ['style-loader', 'css-loader', 'sass-loader']
-    }
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+    },
   ];
 }
 
@@ -29,11 +29,11 @@ export function getAssetsLoader() {
   return [
     {
       test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      type: 'asset/resource'
+      type: 'asset/resource',
     },
     {
       test: /\.(woff|woff2|eot|ttf|otf)$/i,
-      type: 'asset/resource'
+      type: 'asset/resource',
     },
   ];
 }
@@ -43,7 +43,7 @@ export function getTsxLoader() {
     test: /\.(js|jsx|ts|tsx)$/,
     exclude: /(node_modules|bower_components)/i,
     use: {
-      loader: 'swc-loader'
-    }
+      loader: 'swc-loader',
+    },
   };
 }

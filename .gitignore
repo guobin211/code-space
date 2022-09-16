@@ -16,13 +16,13 @@ local
 cache
 .cache
 .idea
-.vscode
 .dist
 .out
 .swc
 *.log
 .pnp
 .pnp.js
+.env
 
 # testing
 coverage
@@ -56,3 +56,5 @@ yarn-error.log*
 # wasm-pack
 npm
 *.node
+crates/rust-wasm-node/index.d.ts
+crates/rust-wasm-node/index.js
