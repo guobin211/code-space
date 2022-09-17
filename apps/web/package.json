@@ -7,21 +7,22 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint *.ts*",
-    "clear": "rm -rf ./node_modules"
+    "clear": "rm -rf ./node_modules",
+    "upgrade": "pnpm update"
   },
   "dependencies": {
-    "next": "12",
-    "react": "17",
-    "react-dom": "17",
-    "ui": "workspace:*"
+    "next": "^12.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ui": "workspace:0.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7",
-    "eslint": "7",
-    "next-transpile-modules": "9",
-    "tsconfig": "workspace:*",
-    "@types/node": "^16",
-    "@types/react": "17",
-    "typescript": "^4"
+    "@babel/core": "^7.19.1",
+    "@types/node": "^16.11.59",
+    "@types/react": "^17.0.50",
+    "eslint": "^7.32.0",
+    "next-transpile-modules": "^9.0.0",
+    "tsconfig": "workspace:0.0.0",
+    "typescript": "^4.8.3"
   }
 }

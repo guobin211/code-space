@@ -4,7 +4,7 @@
   "scripts": {
     "build": "wasm-pack build --release",
     "test": "cargo test",
-    "update": "cargo update"
+    "upgrade": "pnpm update && cargo update"
   },
   "devDependencies": {
     "wasm-pack": "^0.10.3"
