@@ -1,4 +1,4 @@
-import { execSync } from 'child_process';
+import { exec } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -68,14 +68,14 @@ function getAllProjects() {
 function updateNodeProject(projects) {
   for (const project of projects) {
     console.log(`Updating ${project}`);
-    execSync('pnpm update', { cwd: project });
+    exec('pnpm update', { cwd: project });
   }
 }
 
 async function updateCargoProject(projects) {
   for (const project of projects) {
     console.log(`Updating ${project}`);
-    execSync('cargo update', { cwd: project });
+    exec('cargo update', { cwd: project });
   }
 }
 

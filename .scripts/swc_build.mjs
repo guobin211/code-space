@@ -4,6 +4,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const exampleFile = path.join(__dirname, './resource/example.tsx');
+const androidFile = path.join(__dirname, './resource/android.ts');
+
 const save = (name, data) => {
   const dist = path.join(__dirname, 'dist');
   if (!fs.existsSync(dist)) {
@@ -13,9 +16,8 @@ const save = (name, data) => {
 };
 
 async function compileExample() {
-  const file = path.join(__dirname, './example.tsx');
   const result = await swc
-    .transformFile(file, {
+    .transformFile(exampleFile, {
       jsc: {
         parser: {
           syntax: 'typescript',
@@ -45,9 +47,8 @@ async function compileExample() {
 }
 
 async function compileUMD() {
-  const file = path.join(__dirname, './android.ts');
   const result = await swc
-    .transformFile(file, {
+    .transformFile(androidFile, {
       jsc: {
         parser: {
           syntax: 'typescript',
