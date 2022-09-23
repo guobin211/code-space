@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --port 4202",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port 4202",
     "lint": "eslint *.ts*",
     "clear": "rm -rf ./node_modules",
     "upgrade": "pnpm update"

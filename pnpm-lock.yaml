@@ -151,7 +151,6 @@ importers:
       jest: ^27.5.1
       mongoose: ^6.6.1
       mysql2: ^2.3.3
-      node-fetch: ^3.2.10
       passport: ^0.6.0
       passport-jwt: ^4.0.0
       passport-local: ^1.0.0
@@ -206,7 +205,6 @@ importers:
       ioredis: 5.2.3
       mongoose: 6.6.1
       mysql2: 2.3.3
-      node-fetch: 3.2.10
       passport: 0.6.0
       passport-jwt: 4.0.0
       passport-local: 1.0.0
