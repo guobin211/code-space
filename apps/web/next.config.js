@@ -1,6 +1,15 @@
-const withTM = require("next-transpile-modules")(["ui"]);
+const withTM = require('next-transpile-modules')(['ui']);
 
-module.exports = withTM({
+/**
+ * @type {import('next').NextConfig}
+ */
+const config = {
   reactStrictMode: true,
-  eslintMode: false
-});
+  eslint: {
+    ignoreDuringBuilds: true
+  }
+};
+
+const withPlugins = withTM(config);
+
+module.exports = withPlugins;

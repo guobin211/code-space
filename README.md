@@ -1,6 +1,14 @@
 # Code Space 2022
 
-- Node.js
 - Rust
+- Node.js
 - WebAssembly
-- React
+- Web
+
+## Tools
+
+- [x] napi-rs for node.js
+- [x] wasm-pack for webassembly
+- [x] swc for js packaging
+- [x] tokio for runtime
+- [x] actix for web backend
