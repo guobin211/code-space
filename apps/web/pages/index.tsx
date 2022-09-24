@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { Button } from 'ui/src';
+import { Button } from 'react-ui/src';
 import { GetServerSideProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { createApp } from '../store/createApp';
