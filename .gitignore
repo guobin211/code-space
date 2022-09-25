@@ -26,6 +26,7 @@ cache
 .pnp.js
 .env
 .turbo-cookie
+.angular
 
 # testing
 coverage
@@ -62,3 +63,5 @@ npm
 *.node
 crates/rust-wasm-node/index.d.ts
 crates/rust-wasm-node/index.js
+
+documentation
