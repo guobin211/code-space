@@ -14,7 +14,7 @@
     "clear": "turbo run clear",
     "tsnode": "ts-node-esm .scripts/ts_run.ts",
     "update:all": "turbo run upgrade",
-    "format": "prettier --loglevel=warn --write \"**/*.{mjs,ts,tsx,scss,md,mdx}\"",
+    "format": "prettier --loglevel=warn --write \"**/*.{mjs,ts,jsx,tsx,scss,md,mdx}\"",
     "test": "vitest run",
     "coverage": "vitest run --coverage"
   },
