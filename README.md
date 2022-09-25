@@ -8,7 +8,7 @@
 ## Tools
 
 - [x] napi-rs for node.js
-- [x] wasm-pack for webassembly
+- [x] wasm-pack for WebAssembly
 - [x] swc for js packaging
 - [x] tokio for runtime
 - [x] actix for web backend

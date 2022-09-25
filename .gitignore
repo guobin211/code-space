@@ -12,6 +12,8 @@ target
 node_modules
 build
 dist
+dist-ssr
+*.local
 local
 cache
 .cache
@@ -23,6 +25,7 @@ cache
 .pnp
 .pnp.js
 .env
+.turbo-cookie
 
 # testing
 coverage
@@ -52,6 +55,7 @@ yarn-error.log*
 
 # turbo
 .turbo
+.output/
 
 # wasm-pack
 npm
