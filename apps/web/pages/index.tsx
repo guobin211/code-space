@@ -7,6 +7,7 @@ import store, { AppContext } from '../store/store';
 
 interface WebProps {
   query: ParsedUrlQuery;
+  children?: React.ReactNode;
 }
 
 const Web: React.FC<WebProps> = (props) => {

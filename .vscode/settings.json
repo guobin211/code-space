@@ -23,4 +23,7 @@
   "cSpell.words": [
     "typeorm"
   ],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
 }
