@@ -7,16 +7,9 @@ import { RouterModule } from '@angular/router';
 import { AppShellComponent } from './app-shell/app-shell.component';
 import { routes } from './app.routes';
 
-
 @NgModule({
-  imports: [
-    AppModule,
-    ServerModule,
-    RouterModule.forRoot(routes),
-  ],
+  imports: [AppModule, ServerModule, RouterModule.forRoot(routes)],
   bootstrap: [AppComponent],
-  declarations: [
-    AppShellComponent
-  ],
+  declarations: [AppShellComponent],
 })
 export class AppServerModule {}

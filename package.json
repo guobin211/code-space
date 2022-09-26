@@ -10,11 +10,12 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
+    "lint": "turbo run lint && npm run lint:fix",
     "clear": "turbo run clear",
     "tsnode": "ts-node-esm .scripts/ts_run.ts",
     "update:all": "turbo run upgrade",
     "format": "prettier --loglevel=warn --write \"**/*.{mjs,ts,jsx,tsx,scss,md,mdx}\"",
+    "lint:fix": "eslint --fix . --ext .ts,.tsx,.js,.jsx",
     "coverage": "vitest run --coverage",
     "test": "vitest run",
     "wasm-pack": "wasm-pack"
