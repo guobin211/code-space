@@ -2,10 +2,15 @@
   "name": "config-ts",
   "version": "0.0.0",
   "private": true,
-  "main": "index.js",
+  "types": "global.d.ts",
   "files": [
+    "global.d.ts",
     "base.json",
     "nextjs.json",
-    "react-library.json"
+    "node.json",
+    "node.esm.json",
+    "react.json",
+    "react.esm.json",
+    "react.umd.json"
   ]
 }

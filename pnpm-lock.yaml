@@ -231,7 +231,7 @@ importers:
 
   crates/rust-wasm-web:
     specifiers:
-      wasm-pack: ^0.10.3
+      wasm-pack: ^0.10
     devDependencies:
       wasm-pack: 0.10.3
 
@@ -5290,7 +5290,7 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 18.7.20
+      '@types/node': 16.11.60
     dev: true
 
   /@types/bonjour/3.5.10:
@@ -5319,7 +5319,7 @@ packages:
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 18.7.20
+      '@types/node': 16.11.60
     dev: true
 
   /@types/cookie/0.4.1:
@@ -5376,7 +5376,7 @@ packages:
   /@types/express-serve-static-core/4.17.31:
     resolution: {integrity: sha512-DxMhY+NAsTwMMFHBTtJFNp5qiHKJ7TeqOo23zVEM9alT1Ml27Q3xcTH0xwxn7Q0BbMcVEJOs/7aQtUWupUQN3Q==}
     dependencies:
-      '@types/node': 18.7.20
+      '@types/node': 16.11.60
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
     dev: true
@@ -5560,7 +5560,7 @@ packages:
     resolution: {integrity: sha512-z5xyF6uh8CbjAu9760KDKsH2FcDxZ2tFCsA4HIMWE6IkiYMXfVoa+4f9KX+FN0ZLsaMw1WNG2ETLA6N+/YA+cg==}
     dependencies:
       '@types/mime': 3.0.1
-      '@types/node': 18.7.20
+      '@types/node': 16.11.60
     dev: true
 
   /@types/sockjs/0.3.33:
@@ -6806,7 +6806,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001412
-      electron-to-chromium: 1.4.261
+      electron-to-chromium: 1.4.262
       node-releases: 2.0.6
       update-browserslist-db: 1.0.9_browserslist@4.21.4
 
@@ -8045,8 +8045,8 @@ packages:
   /ee-first/1.1.1:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
 
-  /electron-to-chromium/1.4.261:
-    resolution: {integrity: sha512-fVXliNUGJ7XUVJSAasPseBbVgJIeyw5M1xIkgXdTSRjlmCqBbiSTsEdLOCJS31Fc8B7CaloQ/BFAg8By3ODLdg==}
+  /electron-to-chromium/1.4.262:
+    resolution: {integrity: sha512-Ckn5haqmGh/xS8IbcgK3dnwAVnhDyo/WQnklWn6yaMucYTq7NNxwlGE8ElzEOnonzRLzUCo2Ot3vUb2GYUF2Hw==}
 
   /emittery/0.10.2:
     resolution: {integrity: sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==}
@@ -11180,7 +11180,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.7.20
+      '@types/node': 16.11.60
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true

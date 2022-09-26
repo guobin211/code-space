@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node CommonJS",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "lib": ["ES2015"],
+    "module": "CommonJS",
+    "target": "ES2015"
+  }
+}
