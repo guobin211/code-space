@@ -1,4 +1,4 @@
-use std::{slice::from_raw_parts, str::from_utf8_unchecked};
+use std::{mem::size_of_val, slice::from_raw_parts, str::from_utf8_unchecked};
 
 #[derive(Debug, Default, PartialEq, Clone)]
 pub struct Book {
@@ -39,7 +39,49 @@ where
     (ptr, size)
 }
 
-fn main() {}
+// 编译期替换
+const A:i32 = 128;
+// 静态内存
+static B: [u8; 4] = [1, 2, 3, 4];
+static C: [u8; 5] = [1, 2, 3, 4, 5];
+
+fn make_heap_value() {
+    let value = Box::new(&[1,2,3,4]);
+    println!("{:?}", value);
+}
+
+fn main() {
+    let a = 42;
+    let b = Box::new(B);
+    let c = &C;
+    println!("a i32");
+    println!("地址 = {:p}", &a);
+    println!("大小 = {:?}", size_of_val(&a));
+    println!("值 = {:?}", a);
+
+    println!("b Box<[u8]>");
+    println!("地址 = {:p}", &b);
+    println!("大小 = {:?}", size_of_val(&b));
+    println!("值 = {:?}", b);
+
+    println!("c reference");
+    println!("地址 = {:p}", &c);
+    println!("大小 = {:?}", size_of_val(&c));
+    println!("值 = {:?}", c);
+
+    let d = &a;
+    let mut e = &a;
+    println!("d = {:?}", d);
+    println!("e = {:?}", e);
+    e = &24;
+    println!("e = {:?}", e);
+
+    make_heap_value();
+
+    println!("make_heap_value has called");
+
+    println!("A = {}", A);
+}
 
 #[cfg(test)]
 mod tests {
