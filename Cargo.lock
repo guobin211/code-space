@@ -325,6 +325,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "98161a4e3e2184da77bb14f02184cdd111e83bbbcc9979dfee3c44b9a85f5602"
 
 [[package]]
+name = "app-compiler"
+version = "0.1.0"
+dependencies = [
+ "swc",
+]
+
+[[package]]
 name = "app-server"
 version = "0.1.0"
 dependencies = [
