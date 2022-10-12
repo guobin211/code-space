@@ -8,6 +8,6 @@
     "wasm-pack": "wasm-pack"
   },
   "devDependencies": {
-    "wasm-pack": "^0.10"
+    "wasm-pack": "^0.10.3"
   }
 }

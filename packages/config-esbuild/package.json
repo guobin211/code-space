@@ -5,6 +5,6 @@
     "upgrade": "pnpm update"
   },
   "devDependencies": {
-    "esbuild": "^0.15.9"
+    "esbuild": "^0.15.10"
   }
 }

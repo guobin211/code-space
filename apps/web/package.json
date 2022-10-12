@@ -6,7 +6,6 @@
     "dev": "next dev --port 4202",
     "build": "next build",
     "start": "next start --port 4202",
-    "lint": "eslint *.ts*",
     "clear": "rm -rf ./node_modules",
     "upgrade": "pnpm update"
   },
@@ -17,12 +16,11 @@
     "react-ui": "workspace:0.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.1",
-    "@types/node": "^16.11.60",
+    "@babel/core": "^7.19.3",
+    "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
     "config-ts": "workspace:0.0.0",
-    "eslint": "^8.24.0",
-    "next-transpile-modules": "^9.0.0",
-    "typescript": "^4.8.3"
+    "next-transpile-modules": "^9.1.0",
+    "typescript": "^4.8.4"
   }
 }
