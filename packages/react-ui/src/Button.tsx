@@ -6,8 +6,9 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
 
 export const Button: React.FC<ButtonProps> = (props) => {
   const { type, className, ...rest } = props;
+  const cls = [type, className].filter(Boolean).join(' ');
   return (
-    <button {...rest} type="button" className={`${type} ${className}`}>
+    <button {...rest} type='button' className={cls}>
       {props.children}
     </button>
   );
