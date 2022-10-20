@@ -13,20 +13,20 @@
     "upgrade": "pnpm update"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-ui": "workspace:0.0.0"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.9",
     "@tsconfig/svelte": "^3.0.0",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
-    "svelte": "^3.51.0",
+    "svelte": "^3.52.0",
     "svelte-check": "^2.9.2",
     "svelte-preprocess": "^4.10.7",
     "typescript": "^4.8.4",
-    "vite": "^3.1.7"
+    "vite": "^3.1.8"
   }
 }

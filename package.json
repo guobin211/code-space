@@ -4,12 +4,12 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*",
-    "crates/*"
+    "crates/*",
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clear": "turbo run clear",
     "tsnode": "ts-node-esm .scripts/ts_run.ts",
