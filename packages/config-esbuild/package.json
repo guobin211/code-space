@@ -1,0 +1,10 @@
+{
+  "name": "config-esbuild",
+  "version": "0.0.0",
+  "scripts": {
+    "upgrade": "pnpm update"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.12"
+  }
+}

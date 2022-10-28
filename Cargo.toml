@@ -10,26 +10,28 @@ serde = { version = "^1", features = ["derive"] }
 hyper = { version = "^0.14", features = ["full"] }
 config = "^0.13"
 serde_json = "^1"
+json5 = "^0.4"
+utf8_slice = "^1"
 itertools = "^0.10"
 regex = "^1"
 rand = "^0.8"
 anyhow = "^1"
 env_logger = "^0.9"
-deno_core = "^0.149.0"
+console = "^0.15.1"
 tracing = "^0.1"
 tracing-subscriber = "^0.3"
-async-std="^1.12.0"
-lazy_static="^1.4.0"
-url= "^2.2"
-utf8_slice = "^1"
-json5="^0.4"
+lazy_static = "^1.4.0"
+actix-web = "^4"
+actix = "^0.13"
+actix-files = "^0.6"
+url = "^2.2"
+num_cpus = "1.0"
+deno_core = "^0.152"
+swc = "^0.229"
 
 [dev-dependencies]
+mockall = "^0.11.2"
 proptest = "^1"
 
 [workspace]
-members = [
-    "crates/app-server",
-    "crates/rust-wasm-node",
-    "crates/rust-wasm-web",
-]
+members = ["crates/app-server", "crates/rust-wasm-web"]

@@ -12,6 +12,8 @@ target
 node_modules
 build
 dist
+dist-ssr
+*.local
 local
 cache
 .cache
@@ -23,6 +25,8 @@ cache
 .pnp
 .pnp.js
 .env
+.turbo-cookie
+.angular
 
 # testing
 coverage
@@ -52,9 +56,12 @@ yarn-error.log*
 
 # turbo
 .turbo
-
+.output/
+.eslintcache
 # wasm-pack
 npm
 *.node
 crates/rust-wasm-node/index.d.ts
 crates/rust-wasm-node/index.js
+
+documentation

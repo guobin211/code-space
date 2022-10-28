@@ -2,9 +2,10 @@
   "name": "rust-wasm-web",
   "version": "1.0.0",
   "scripts": {
-    "build": "wasm-pack build --release",
+    "build:wasm": "wasm-pack build --release",
     "test": "cargo test",
-    "update": "cargo update"
+    "upgrade": "pnpm update && cargo update",
+    "wasm-pack": "wasm-pack"
   },
   "devDependencies": {
     "wasm-pack": "^0.10.3"

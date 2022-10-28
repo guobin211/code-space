@@ -1,0 +1,5 @@
+{
+  "extends": "config-ts/react.esm.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}

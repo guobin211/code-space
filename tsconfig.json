@@ -15,7 +15,8 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
+    "moduleResolution": "node",
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
   }
 }

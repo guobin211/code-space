@@ -10,6 +10,7 @@
     "visualstudioexptteam.vscodeintellicode",
     "esbenp.prettier-vscode",
     "swellaby.vscode-rust-test-adapter",
-    "dustypomerleau.rust-syntax"
+    "dustypomerleau.rust-syntax",
+    "astro-build.astro-vscode"
   ]
 }

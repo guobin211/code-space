@@ -1,0 +1,16 @@
+{
+  "name": "config-ts",
+  "version": "0.0.0",
+  "private": true,
+  "types": "global.d.ts",
+  "files": [
+    "global.d.ts",
+    "base.json",
+    "nextjs.json",
+    "node.json",
+    "node.esm.json",
+    "react.json",
+    "react.esm.json",
+    "react.umd.json"
+  ]
+}

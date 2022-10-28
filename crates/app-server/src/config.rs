@@ -12,11 +12,11 @@ pub struct ServerConfig {
 impl ServerConfig {
     pub fn new() -> Self {
         ServerConfig {
-            port: 8999,
+            port: 8990,
             mongo_url: "mongodb://localhost:27017",
             mongo_db_name: "rust_api_server",
-            origin: "127.0.0.1:8999",
-            local_url: "http://127.0.0.1:8999",
+            origin: "127.0.0.1:8990",
+            local_url: "http://127.0.0.1:8990",
         }
     }
 
