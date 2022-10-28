@@ -3,16 +3,18 @@ import { test, assert } from 'vitest';
 const renderEmail = (email: string) => {
   if (email) {
     let skip = false;
-    return email.split('').reduce((prev: string, next: string, index: number) => {
-      if (next === '@') {
-        skip = true;
-      }
-      if (skip) return `${prev}${next}`;
-      if (index > 3) {
-        return `${prev}*`;
-      }
-      return `${prev}${next}`;
-    }, '');
+    return email
+      .split('')
+      .reduce((prev: string, next: string, index: number) => {
+        if (next === '@') {
+          skip = true;
+        }
+        if (skip) return `${prev}${next}`;
+        if (index > 3) {
+          return `${prev}*`;
+        }
+        return `${prev}${next}`;
+      }, '');
   }
   return '';
 };

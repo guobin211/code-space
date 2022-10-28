@@ -89,4 +89,5 @@ export function createCache(option: CacheOptions = {}) {
   return new Cache(option);
 }
 
-export const IS_SERVER = typeof localStorage === 'undefined' || typeof window === 'undefined';
+export const IS_SERVER =
+  typeof localStorage === 'undefined' || typeof window === 'undefined';

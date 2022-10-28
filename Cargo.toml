@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
-clap = { version = "^3", features = ["derive"] }
+clap = { version = "^4", features = ["derive"] }
 serde = { version = "^1", features = ["derive"] }
 hyper = { version = "^0.14", features = ["full"] }
 config = "^0.13"
@@ -34,4 +34,3 @@ mockall = "^0.11.2"
 proptest = "^1"
 
 [workspace]
-members = ["crates/app-server", "crates/rust-wasm-web"]

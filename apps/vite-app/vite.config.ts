@@ -27,4 +27,7 @@ export default defineConfig({
     minify: false,
     rollupOptions,
   },
+  server: {
+    port: 3001,
+  },
 });

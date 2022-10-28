@@ -5,10 +5,8 @@
 - WebAssembly
 - Web
 
-## Tools
+## Apps
 
-- [x] napi-rs for node.js
-- [x] wasm-pack for WebAssembly
-- [x] swc for js packaging
-- [x] tokio for runtime
-- [x] actix for web backend
+- [x] React with Next.js
+- [x] Svelte with Vite
+- [x] Tokio and Actix for Backend

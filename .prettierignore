@@ -1,0 +1,9 @@
+node_modules
+target
+build
+dist
+libs
+.next
+.vite
+.cache
+.turbo

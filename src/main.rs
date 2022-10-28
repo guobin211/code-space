@@ -1,5 +1,3 @@
-pub mod views;
-
 fn main() {
-    println!("from src main.rs");
+    println!("hello rust 2023");
 }
