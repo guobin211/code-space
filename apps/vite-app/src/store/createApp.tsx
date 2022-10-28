@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { IS_SERVER } from './createCache';
 import { Patcher } from './createStore';
 import store, { AppContext } from './appStore';
+import { IS_SERVER } from '../utils/constant';
 
 /**
  * 创建一个store的provider

@@ -1,3 +1,5 @@
+import { IS_SERVER } from '../utils/constant';
+
 export class Cache {
   option: CacheOptions;
   storage: Storage;
@@ -88,6 +90,3 @@ export function createCache(option: CacheOptions = {}) {
   }
   return new Cache(option);
 }
-
-export const IS_SERVER =
-  typeof localStorage === 'undefined' || typeof window === 'undefined';
