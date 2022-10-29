@@ -1,1 +1,1 @@
-# The Next.js App
+# Next.js

@@ -52,7 +52,6 @@ yarn-error.log*
 .turbo
 .output/
 .eslintcache
-# wasm-pack
-npm
 *.node
-documentation
+.vercel
+apps/next-app/.vscode
