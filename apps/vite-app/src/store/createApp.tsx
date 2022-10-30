@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Patcher } from './createStore';
-import store, { AppContext } from './appStore';
-import { IS_SERVER } from '../utils/constant';
+import store, { AppContext, StoreValues } from './appStore';
+import { IS_SERVER } from '../constant';
 
 /**
  * 创建一个store的provider
@@ -39,7 +39,7 @@ export function createApp<P extends object>(FC: React.FC<P>) {
     const value = {
       ...pageState,
       updateState,
-    } as any;
+    } as unknown as StoreValues;
 
     const adapterStyle = {
       display: hasSync && !IS_SERVER ? 'block' : 'none',
@@ -51,9 +51,10 @@ export function createApp<P extends object>(FC: React.FC<P>) {
       </AppContext.Provider>
     );
   };
-  return (props: P) => (
+  const AppWithStore = (props: P) => (
     <AppContextStore {...props}>
       <FC {...props}></FC>
     </AppContextStore>
   );
+  return AppWithStore;
 }

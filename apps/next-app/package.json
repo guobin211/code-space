@@ -5,6 +5,7 @@
     "build": "next build",
     "start": "next start",
     "clear": "rimraf .next && rimraf node_modules",
+    "lint": "eslint --ext .jsx,.tsx --fix app",
     "upgrade": "pnpm update"
   },
   "dependencies": {

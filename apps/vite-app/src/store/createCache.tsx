@@ -1,4 +1,4 @@
-import { IS_SERVER } from '../utils/constant';
+import { IS_SERVER } from '../constant';
 
 export class Cache {
   option: CacheOptions;

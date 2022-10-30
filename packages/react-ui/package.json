@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clear": "rm -rf ./node_modules",
+    "lint": "eslint --ext .jsx,.tsx --fix src",
     "upgrade": "pnpm update"
   },
   "devDependencies": {
