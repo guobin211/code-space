@@ -1,8 +1,32 @@
 import ReactDOMServer from 'react-dom/server';
 import App from './App';
 
-export function render(url, context) {
-  return ReactDOMServer.renderToString(<App context={context} url={url} />);
+/**
+ * 服务端渲染
+ * @param {import('express').Request} req
+ * @param {import('./App').AppProps} props
+ * @returns
+ */
+export async function render(req, props) {
+  const { url } = req;
+  const html = ReactDOMServer.renderToString(<App {...props} />);
+  console.log('request url');
+  console.log(url);
+  console.log('ssr render html');
+  console.log(html);
+  return html;
 }
 
-export default render;
+/**
+ * 服务端逻辑
+ * @param {import('express').Request} req
+ * @returns {import('./App').AppProps}
+ */
+export async function getServerSideProps(req) {
+  const { url } = req;
+  return {
+    props: {
+      url,
+    },
+  };
+}

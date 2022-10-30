@@ -1,33 +1,27 @@
-import { defineConfig } from 'vite';
+import { defineConfig, BuildOptions } from 'vite';
 import react from '@vitejs/plugin-react';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const entry = {
-  client: path.join(__dirname, 'src', 'entry.client.jsx'),
-  hydration: path.join(__dirname, 'src', 'entry.hydration.jsx'),
-  ssr: path.join(__dirname, 'src', 'entry.ssr.jsx'),
-};
-
-const isSSR = process.argv.includes('--ssr');
-const isProd = process.env.NODE_ENV === 'production';
-const rollupOptions = isProd
-  ? {
-      input: isSSR ? entry.ssr : entry.hydration,
-    }
-  : {
-      input: entry.client,
-    };
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react(), svelte()],
-  build: {
-    manifest: true,
-    minify: false,
-    rollupOptions,
-  },
-  server: {
-    port: 3001,
-  },
+export default defineConfig(async ({ mode, ssrBuild }) => {
+  const IS_SSR = ssrBuild;
+  const IS_PROD = mode === 'production';
+  const rollupOptions: BuildOptions['rollupOptions'] = {};
+  if (IS_SSR) {
+    rollupOptions.input = path.join(__dirname, 'src', 'entry.ssr.jsx');
+  }
+  return {
+    plugins: [react(), svelte()],
+    build: {
+      minify: IS_PROD,
+      rollupOptions,
+    },
+    server: {
+      port: 3001,
+    },
+  };
 });

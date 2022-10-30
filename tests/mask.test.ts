@@ -18,7 +18,7 @@ const renderEmail = (email: string) => {
 };
 
 test('renderEmail', () => {
-  assert.equal(renderEmail('844922881@qq.com'), '8449*****@qq.com');
+  assert.equal(renderEmail('844911111@qq.com'), '8449*****@qq.com');
   assert.equal(renderEmail('8449@qq.com'), '8449@qq.com');
   assert.equal(renderEmail('84@qq.com'), '84@qq.com');
 });
