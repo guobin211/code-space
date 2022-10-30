@@ -22,21 +22,22 @@ const getProps = (props) => {
 
 async function createServer() {
   const app = express();
-  let template, mod;
+  let template, mod, vite;
   if (!IS_PROD) {
     // 开发环境启用vite相关的功能
-    const vite = await createViteServer({
+    vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'custom',
     });
     app.use(vite.middlewares);
-    template = await vite.transformIndexHtml(req.url, TEMPLATE);
-    mod = await vite.ssrLoadModule('/src/entry.ssr.jsx');
   }
   app.use('*', async (req, res) => {
     if (IS_PROD) {
-      template = TEMPLATE;
       mod = await import('./dist/server/entry.ssr.js');
+      template = TEMPLATE;
+    } else {
+      mod = await vite.ssrLoadModule('/src/entry.ssr.jsx');
+      template = await vite.transformIndexHtml(req.url, TEMPLATE);
     }
     console.log('vite.template');
     console.log(template);
