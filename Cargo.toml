@@ -2,35 +2,44 @@
 name = "code-space"
 version = "0.1.0"
 edition = "2021"
+default-run = "cs"
+
+[[bin]]
+name = "cs"
+path = "src/main.rs"
+
+[[bin]]
+name = "app_pack"
+path = "src/bin/app_pack.rs"
+
+[[bin]]
+name = "app_server"
+path = "src/bin/app_server.rs"
 
 [dependencies]
-tokio = { version = "1", features = ["full"] }
+tokio = { version = "^1", features = ["full"] }
 clap = { version = "^4", features = ["derive"] }
 serde = { version = "^1", features = ["derive"] }
-hyper = { version = "^0.14", features = ["full"] }
-config = "^0.13"
 serde_json = "^1"
 json5 = "^0.4"
-utf8_slice = "^1"
-itertools = "^0.10"
+lazy_static = "^1.4.0"
 regex = "^1"
 rand = "^0.8"
-anyhow = "^1"
-env_logger = "^0.9"
-console = "^0.15.1"
-tracing = "^0.1"
-tracing-subscriber = "^0.3"
-lazy_static = "^1.4.0"
-actix-web = "^4"
-actix = "^0.13"
-actix-files = "^0.6"
+env_logger = "0.8"
+log = "^0.4"
 url = "^2.2"
-num_cpus = "1.0"
-deno_core = "^0.152"
-swc = "^0.229"
+actix-web = "^4"
+actix-files = "^0.6"
+deno_core = "^0.156"
+swc = "^0.232"
 
 [dev-dependencies]
 mockall = "^0.11.2"
 proptest = "^1"
 
 [workspace]
+members = [
+    "packages/rsx-compiler",
+    "packages/rsx-runtime",
+    "packages/rsx-server"
+]
