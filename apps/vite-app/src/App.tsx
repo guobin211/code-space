@@ -1,10 +1,23 @@
 import React from 'react';
 import { useEffect } from 'react';
-import IndexPage from './pages/index.page';
 
 export interface AppProps {
   url?: string;
 }
+
+export interface IndexPageProps {
+  id?: string;
+}
+
+const IndexPage: React.FC<IndexPageProps> = (props) => {
+  const { id } = props;
+  return (
+    <div id={id}>
+      <h1>IndexPageProps</h1>
+      <button className='my-btn'>hello</button>
+    </div>
+  );
+};
 
 const App: React.FC<AppProps> = (props) => {
   useEffect(() => {

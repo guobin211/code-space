@@ -21,7 +21,7 @@ export async function render(req, props) {
 /**
  * 服务端逻辑
  * @param {import('express').Request} req
- * @returns {import('./App').AppProps}
+ * @returns {Promise<{props: object}>}
  */
 export async function getServerSideProps(req) {
   const { url } = req;
