@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/globals.css';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html>
       <head>
@@ -15,4 +15,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

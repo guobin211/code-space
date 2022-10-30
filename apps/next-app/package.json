@@ -8,6 +8,7 @@
     "lint": "eslint --ext .jsx,.tsx --fix app",
     "upgrade": "pnpm update"
   },
+  "name": "next-app",
   "dependencies": {
     "next": "latest",
     "react": "18.2.0",
