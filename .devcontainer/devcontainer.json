@@ -36,8 +36,7 @@
         "usernamehw.errorlens",
         "visualstudioexptteam.vscodeintellicode",
         "esbenp.prettier-vscode",
-        "swellaby.vscode-rust-test-adapter",
-        "dustypomerleau.rust-syntax"
+        "swellaby.vscode-rust-test-adapter"
       ]
     }
   },
