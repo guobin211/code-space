@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"name": "✨ code-space",
+			"path": "."
+		},
+		{
+			"name": "🚀 next-app",
+			"path": "apps/next-app"
+		},
+		{
+			"name": "🚀 vite-app",
+			"path": "apps/vite-app"
+		},
+		{
+			"name": "rsx-language-support",
+			"path": "extensions/rsx-language-support"
+		},
+		{
+			"name": "📦 react-ui",
+			"path": "packages/react-ui"
+		},
+		{
+			"name": "📦 rsx-compiler",
+			"path": "packages/rsx-compiler"
+		},
+		{
+			"name": "📦 rsx-runtime",
+			"path": "packages/rsx-runtime"
+		},
+		{
+			"name": "📦 rsx-server",
+			"path": "packages/rsx-server"
+		}
+	],
+	"settings": {
+		"json.schemaDownload.enable": true
+	}
+}

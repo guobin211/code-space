@@ -36,7 +36,7 @@ async function createServer() {
       mod = await import('./dist/server/entry.ssr.js');
       template = TEMPLATE;
     } else {
-      mod = await vite.ssrLoadModule('/src/entry.ssr.jsx');
+      mod = await vite.ssrLoadModule('/src/entry.ssr.tsx');
       template = await vite.transformIndexHtml(req.url, TEMPLATE);
     }
     console.log('vite.template');
