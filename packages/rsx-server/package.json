@@ -6,5 +6,7 @@
     "clear": "rimraf node_modules",
     "upgrade": "pnpm update && cargo update"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "config-ts": "workspace:0.0.0"
+  }
 }

@@ -14,7 +14,7 @@
     },
     {
       "name": "📦 rsx-language-support",
-      "path": "extensions/rsx-language-support"
+      "path": "packages/rsx-language-support"
     },
     {
       "name": "📦 base-utils",

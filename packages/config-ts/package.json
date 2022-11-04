@@ -12,5 +12,8 @@
     "react.json",
     "react.esm.json",
     "react.umd.json"
-  ]
+  ],
+  "dependencies": {
+    "typescript": "^4"
+  }
 }

@@ -4,9 +4,6 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 const nextConfig = {
   reactStrictMode: !IS_PROD,
   swcMinify: true,
-  experimental: {
-    appDir: true,
-  },
   eslint: {
     dirs: [],
     ignoreDuringBuilds: true,
