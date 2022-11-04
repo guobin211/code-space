@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import App from './App';
-
+import App, { AppProps } from './App';
+import { Request } from 'express';
 /**
  * 服务端渲染
  * @param {import('express').Request} req
  * @param {import('./App').AppProps} props
  * @returns
  */
-export async function render(req, props) {
+export async function render(req: Request, props: AppProps) {
   const { url } = req;
   const html = ReactDOMServer.renderToString(<App {...props} />);
   console.log('request url');
@@ -23,7 +23,7 @@ export async function render(req, props) {
  * @param {import('express').Request} req
  * @returns {Promise<{props: object}>}
  */
-export async function getServerSideProps(req) {
+export async function getServerSideProps(req: Request) {
   const { url } = req;
   return {
     props: {

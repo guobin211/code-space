@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Patcher } from './createStore';
 import store, { AppContext, StoreValues } from './appStore';
-import { IS_SERVER } from '../constant';
-
+export const IS_SERVER = typeof window === 'undefined';
 /**
  * 创建一个store的provider
  * @param FC {React.FC}

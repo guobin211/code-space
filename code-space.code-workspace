@@ -1,39 +1,52 @@
 {
-	"folders": [
-		{
-			"name": "✨ code-space",
-			"path": "."
-		},
-		{
-			"name": "🚀 next-app",
-			"path": "apps/next-app"
-		},
-		{
-			"name": "🚀 vite-app",
-			"path": "apps/vite-app"
-		},
-		{
-			"name": "rsx-language-support",
-			"path": "extensions/rsx-language-support"
-		},
-		{
-			"name": "📦 react-ui",
-			"path": "packages/react-ui"
-		},
-		{
-			"name": "📦 rsx-compiler",
-			"path": "packages/rsx-compiler"
-		},
-		{
-			"name": "📦 rsx-runtime",
-			"path": "packages/rsx-runtime"
-		},
-		{
-			"name": "📦 rsx-server",
-			"path": "packages/rsx-server"
-		}
-	],
-	"settings": {
-		"json.schemaDownload.enable": true
-	}
+  "folders": [
+    {
+      "name": "✨ code-space",
+      "path": "."
+    },
+    {
+      "name": "🚀 next-app",
+      "path": "apps/next-app"
+    },
+    {
+      "name": "🚀 vite-app",
+      "path": "apps/vite-app"
+    },
+    {
+      "name": "📦 rsx-language-support",
+      "path": "extensions/rsx-language-support"
+    },
+    {
+      "name": "📦 base-utils",
+      "path": "packages/base-utils"
+    },
+    {
+      "name": "📦 config-postcss",
+      "path": "packages/config-postcss"
+    },
+    {
+      "name": "📦 config-ts",
+      "path": "packages/config-ts"
+    },
+    {
+      "name": "📦 react-ui",
+      "path": "packages/react-ui"
+    },
+    {
+      "name": "📦 rsx-compiler",
+      "path": "packages/rsx-compiler"
+    },
+    {
+      "name": "📦 rsx-runtime",
+      "path": "packages/rsx-runtime"
+    },
+    {
+      "name": "📦 rsx-server",
+      "path": "packages/rsx-server"
+    }
+  ],
+  "settings": {
+    "json.schemaDownload.enable": true,
+    "typescript.tsdk": "✨ code-space/node_modules/typescript/lib"
+  }
 }

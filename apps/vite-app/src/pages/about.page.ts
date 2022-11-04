@@ -1,5 +1,4 @@
 import { getClientProps, getRootElement, IS_CLIENT } from '../shared';
-import Page from './about.svelte';
 
 export async function getServerSideProps() {
   return {
@@ -15,10 +14,7 @@ export async function renderToString() {
 const mount = () => {
   const target = getRootElement();
   const props = getClientProps();
-  new Page({
-    target,
-    props,
-  });
+  console.log('about page', target, props);
 };
 
 (() => {
