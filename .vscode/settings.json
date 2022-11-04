@@ -20,5 +20,7 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "json.schemaDownload.enable": true,
-  "cSpell.words": ["astro", "cpus", "styl", "typeorm"]
+  "cSpell.words": ["astro", "cpus", "styl", "typeorm"],
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

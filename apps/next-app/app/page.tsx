@@ -1,8 +1,8 @@
 import React from 'react';
 const Page: React.FC = () => {
   return (
-    <div className='app-page'>
-      <div>hello next.js</div>
+    <div className='app-index'>
+      <div>Welcome to Next.js</div>
     </div>
   );
 };

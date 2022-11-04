@@ -1,5 +1,6 @@
+import AppHeader from '@/components/AppHeader';
 import React from 'react';
-import '../styles/globals.css';
+import '../styles/globals.scss';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -9,8 +10,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body>
         <div className='app-layout'>
-          <div>Root Layout</div>
-          <div>{children}</div>
+          <AppHeader></AppHeader>
+          <main>{children}</main>
         </div>
       </body>
     </html>
