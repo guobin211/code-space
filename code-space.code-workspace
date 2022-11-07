@@ -47,6 +47,6 @@
   ],
   "settings": {
     "json.schemaDownload.enable": true,
-    "typescript.tsdk": "✨ code-space/node_modules/typescript/lib"
+    "typescript.tsdk": "code-space/node_modules/typescript/lib"
   }
 }
