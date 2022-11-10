@@ -30,7 +30,7 @@ export default defineConfig(async ({ mode, ssrBuild }) => {
       minify: IS_PROD,
     },
     server: {
-      port: 3001,
+      port: 4202,
     },
   };
 });
