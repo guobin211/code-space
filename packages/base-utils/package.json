@@ -4,7 +4,7 @@
   "scripts": {
     "upgrade": "pnpm update",
     "clear": "rimraf dist && rimraf node_modules",
-    "lint": "eslint --ext .jsx,.tsx --fix src"
+    "lint": "eslint --ext .js,.ts --fix src"
   },
   "devDependencies": {
     "config-ts": "workspace:0.0.0"
