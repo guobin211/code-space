@@ -1,5 +1,15 @@
-export function ajax({ url, header, body, params, method, responseType, timeout }, success, error) {
+const ERROR = {
+  NOT_SUPPORTED: 'XMLHttpRequest NOT SUPPORTED',
+};
+
+export function ajax(
+  { url, header, body, params, method, responseType, timeout },
+  onSuccess,
+  onError
+) {
   if (typeof XMLHttpRequest === 'undefined') {
+    console.error(ERROR.NOT_SUPPORTED);
+    onError && onError(ERROR.NOT_SUPPORTED);
     return;
   }
   const xhr = new XMLHttpRequest();
@@ -15,17 +25,17 @@ export function ajax({ url, header, body, params, method, responseType, timeout 
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status >= 200 && xhr.status < 300) {
-        success && success(xhr.response);
+        onSuccess && onSuccess(xhr.response);
       } else {
-        error && error(xhr.response);
+        onError && onError(xhr.response);
       }
     }
   };
   xhr.onerror = function () {
-    error && error(xhr.response);
+    onError && onError(xhr.response);
   };
   xhr.ontimeout = function () {
-    error && error(xhr.response);
+    onError && onError(xhr.response);
   };
   xhr.send(body);
 }

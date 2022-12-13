@@ -32,6 +32,10 @@ export class Person {
   #log() {
     console.log('Person.private.log', this.rating);
   }
+
+  static create(name, age) {
+    return new Person(name, age);
+  }
 }
 
 // ============================================================
