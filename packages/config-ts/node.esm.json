@@ -3,9 +3,7 @@
   "display": "Node ESM",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": [
-      "ESNext"
-    ],
+    "lib": ["ESNext"],
     "module": "ESNext",
     "target": "ES2017"
   }

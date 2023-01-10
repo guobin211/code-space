@@ -3,11 +3,7 @@
   "display": "React UMD",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "UMD",
     "target": "ES2015",
     "jsx": "react-jsx"
