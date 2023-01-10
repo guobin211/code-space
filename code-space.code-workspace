@@ -43,10 +43,13 @@
     {
       "name": "📦 rsx-server",
       "path": "packages/rsx-server"
+    },
+    {
+      "name": "🚀 examples",
+      "path": "examples"
     }
   ],
   "settings": {
-    "json.schemaDownload.enable": true,
-    "typescript.tsdk": "code-space/node_modules/typescript/lib"
+    "json.schemaDownload.enable": true
   }
 }
