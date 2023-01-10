@@ -6,14 +6,18 @@ import { createServer as createViteServer } from 'vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const IS_PROD = process.env.NODE_ENV === 'production';
-const APP_TITLE = '<!--VITE_APP_TITLE-->';
+const APP_TITLE = '<!--VITE_APP_HEAD-->';
 const APP_HTML = '<!--VITE_APP_HTML-->';
 const APP_PROPS = '<!--VITE_APP_PROPS-->';
+const APP_SCRIPTS = '<!--VITE_APP_SCRIPTS-->';
 const TEMPLATE = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf-8');
 const PORT = 5173;
 
-const renderDocument = ({ title = '', html = '', props = '' }) => {
-  return TEMPLATE.replace(APP_TITLE, title).replace(APP_HTML, html).replace(APP_PROPS, props);
+const renderDocument = ({ title = '', html = '', props = '', scripts = '' }) => {
+  return TEMPLATE.replace(APP_TITLE, title)
+    .replace(APP_HTML, html)
+    .replace(APP_PROPS, props)
+    .replace(APP_SCRIPTS, scripts);
 };
 
 const getProps = (props) => {
