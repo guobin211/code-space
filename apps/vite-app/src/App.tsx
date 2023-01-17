@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { AnimateBall } from './animation/AnimateBall';
 import './styles/index.css';
 
@@ -26,6 +26,11 @@ const App: React.FC<AppProps> = () => {
     }
   };
 
+  const [className, setClassName] = useState('css-animate');
+  const handleAnimate = () => {
+    setClassName('css-animate css-end');
+  };
+
   return (
     <div className='app'>
       <div className='item'>
@@ -41,6 +46,18 @@ const App: React.FC<AppProps> = () => {
         <button className='btn' onClick={handleClick}>
           3
         </button>
+      </div>
+      <div className='item'>
+        <button
+          className='btn'
+          onClick={() => {
+            setClassName('css-animate');
+          }}>
+          reset
+        </button>
+      </div>
+      <div className='item'>
+        <div className={className} onClick={handleAnimate}></div>
       </div>
     </div>
   );

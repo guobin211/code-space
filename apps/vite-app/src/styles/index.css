@@ -26,3 +26,19 @@
   height: 48px;
   margin: 0 20px;
 }
+
+.css-animate {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #f08300;
+  position: fixed;
+  left: 400px;
+  top: 400px;
+  transition: all 0.5s cubic-bezier(.24, .26, .66, .67);
+}
+
+.css-end {
+  left: 200px;
+  top: 300px;
+}
