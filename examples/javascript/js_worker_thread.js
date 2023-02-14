@@ -22,7 +22,7 @@ const encodeMessage = (obj) => {
 /**
  * 解析buffer
  * @param {Buffer} buffer
- * @returns {string}
+ * @returns {string|null}
  */
 const decodeMessage = (buffer) => {
   if (!buffer) {

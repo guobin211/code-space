@@ -1,4 +1,5 @@
 class GlobalState {
+  static name = 'GlobalState';
   // 全局单例key
   static storeKey = Symbol(GlobalState.name);
   getStore() {
