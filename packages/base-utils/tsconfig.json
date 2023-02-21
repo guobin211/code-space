@@ -1,8 +1,0 @@
-{
-  "extends": "config-ts/node.esm.json",
-  "compilerOptions": {
-    "resolveJsonModule": true
-  },
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
-}

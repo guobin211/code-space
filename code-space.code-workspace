@@ -1,8 +1,12 @@
 {
   "folders": [
     {
-      "name": "✨ code-space",
+      "name": "🏡 code-space",
       "path": "."
+    },
+    {
+      "name": "🚀 astro-app",
+      "path": "apps/astro-app"
     },
     {
       "name": "🚀 next-app",
@@ -13,24 +17,20 @@
       "path": "apps/vite-app"
     },
     {
-      "name": "📦 rsx-language-support",
-      "path": "packages/rsx-language-support"
+      "name": "🚀 examples",
+      "path": "examples"
     },
     {
-      "name": "📦 base-utils",
-      "path": "packages/base-utils"
+      "name": "🚗 react-ui",
+      "path": "packages/react-ui"
     },
     {
-      "name": "📦 config-postcss",
+      "name": "⭐️ config-postcss",
       "path": "packages/config-postcss"
     },
     {
-      "name": "📦 config-ts",
+      "name": "⭐️ config-ts",
       "path": "packages/config-ts"
-    },
-    {
-      "name": "📦 react-ui",
-      "path": "packages/react-ui"
     },
     {
       "name": "📦 rsx-compiler",
@@ -45,8 +45,8 @@
       "path": "packages/rsx-server"
     },
     {
-      "name": "🚀 examples",
-      "path": "examples"
+      "name": "📦 rsx-language-support",
+      "path": "packages/rsx-language-support"
     }
   ],
   "settings": {
