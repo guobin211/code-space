@@ -25,11 +25,11 @@
       "path": "packages/react-ui"
     },
     {
-      "name": "⭐️ config-postcss",
+      "name": "🚗 config-postcss",
       "path": "packages/config-postcss"
     },
     {
-      "name": "⭐️ config-ts",
+      "name": "🚗 config-ts",
       "path": "packages/config-ts"
     },
     {
@@ -50,6 +50,7 @@
     }
   ],
   "settings": {
-    "json.schemaDownload.enable": true
+    "json.schemaDownload.enable": true,
+    "cSpell.words": ["lightningcss"]
   }
 }
