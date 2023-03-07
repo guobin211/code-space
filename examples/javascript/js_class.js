@@ -53,8 +53,23 @@ export class Employee extends Person {
 }
 
 export function Animal(name) {
+  if (!new.target) {
+    throw new Error('Animal must be called with new');
+  }
   this.name = name;
 }
+
+/**
+ * static method
+ * @param {object} someAnimal
+ * @returns boolean
+ */
+Animal.printIsSafe = function (someAnimal) {
+  if (someAnimal && typeof someAnimal.printName === 'function') {
+    return true;
+  }
+  return false;
+};
 
 Animal.prototype.printName = function () {
   console.log('Animal.prototype.printName : ', this.name);
