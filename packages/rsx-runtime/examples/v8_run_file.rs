@@ -23,7 +23,7 @@ pub async fn console_ok(s: String) {
 pub async fn run_js_file(filepath: &str) -> Result<(), AnyError> {
     let main_module = deno_core::resolve_path(filepath)?;
     // 扩展
-    let extension = Extension::builder()
+    let extension = Extension::builder("deno:runtime:extensions/console")
         .ops(vec![
             console_error::decl(),
             console_warn::decl(),

@@ -12,12 +12,12 @@
 		"upgrade": "pnpm update"
 	},
 	"dependencies": {
-		"@astrojs/react": "^2.0.2",
+		"@astrojs/react": "^2.1.0",
 		"@nanostores/react": "^0.4.1",
 		"@types/react": "^18.0.28",
 		"@types/react-dom": "^18.0.11",
-		"astro": "^2.0.18",
-		"autoprefixer": "^10.4.13",
+		"astro": "^2.1.2",
+		"autoprefixer": "^10.4.14",
 		"nanostores": "^0.7.4",
 		"postcss": "^8.4.21",
 		"react": "^18.2.0",
