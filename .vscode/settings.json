@@ -19,5 +19,13 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "cSpell.words": ["astro", "cpus", "styl", "typeorm"]
+  "cSpell.words": [
+    "astro",
+    "cpus",
+    "styl",
+    "typeorm"
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
