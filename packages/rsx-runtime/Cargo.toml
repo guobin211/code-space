@@ -1,13 +1,13 @@
 [package]
+authors = ["michaelbguo <michaelbguo@tencent.com>"]
+edition = "2021"
 name = "rsx-runtime"
 version = "0.1.0"
-edition = "2021"
-authors = ["michaelbguo <michaelbguo@tencent.com>"]
 
 [dependencies]
-tokio = { version = "^1", features = ["full"] }
-serde = { version = "^1", features = ["derive"] }
-serde_json = "^1"
+deno_core = "^0.174"
 json5 = "^0.4"
 lazy_static = "^1.4.0"
-deno_core="^0.174"
+serde = { version = "^1", features = ["derive"] }
+serde_json = "^1"
+tokio = { version = "^1", features = ["full"] }

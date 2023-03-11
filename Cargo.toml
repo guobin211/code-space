@@ -1,39 +1,38 @@
 [package]
+default-run = "cs"
+edition = "2021"
 name = "code-space"
 version = "0.1.0"
-edition = "2021"
-default-run = "cs"
 
 [[bin]]
 name = "cs"
 path = "src/main.rs"
 
 [[bin]]
-name = "app_pack"
+name = "ap"
 path = "src/bin/app_pack.rs"
 
 [[bin]]
-name = "app_server"
+name = "as"
 path = "src/bin/app_server.rs"
 
 [[bin]]
-name = "app_compiler"
+name = "ac"
 path = "src/bin/app_compiler.rs"
 
 [dependencies]
 clap = { version = "^4", features = ["derive"] }
-serde = { version = "^1", features = ["derive"] }
-serde_json = "^1"
 json5 = "^0.4"
 lazy_static = "^1.4.0"
+serde = { version = "^1", features = ["derive"] }
+serde_json = "^1"
 
 [dev-dependencies]
 mockall = "^0.11.2"
-proptest = "^1"
 
 [workspace]
 members = [
     "packages/rsx-compiler",
     "packages/rsx-runtime",
-    "packages/rsx-server"
+    "packages/rsx-server",
 ]
