@@ -5,10 +5,8 @@ import { createStore } from './createStore';
  * 脱离react的store
  */
 const store = createStore({
-  username: '',
-  password: '',
-  age: 0,
-  count: 0,
+  appid: '',
+  userid: '',
 });
 
 export const AppContext = React.createContext<StoreValues>(store.getState());
