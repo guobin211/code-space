@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "clear": "rimraf .next && rimraf node_modules",
-    "lint": "eslint --ext .jsx,.tsx --fix app",
+    "lint": "eslint --ext .jsx,.tsx --fix",
     "upgrade": "pnpm update"
   },
   "name": "next-app",
@@ -16,6 +16,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "sass": "^1.58.3"
+    "sass": "^1.59.2"
   }
 }

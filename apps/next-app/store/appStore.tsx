@@ -1,5 +1,5 @@
-import React from 'react';
-import { createStore } from './createStore';
+import React from 'react'
+import { createStore } from './createStore'
 
 /**
  * 脱离react的store
@@ -7,10 +7,10 @@ import { createStore } from './createStore';
 const store = createStore({
   appid: '',
   userid: '',
-});
+})
 
-export const AppContext = React.createContext<StoreValues>(store.getState());
+export const AppContext = React.createContext<StoreValues>(store.getState())
 
-export type StoreValues = ReturnType<typeof store.getState>;
+export type StoreValues = ReturnType<typeof store.getState>
 
-export default store;
+export default store

@@ -8,6 +8,5 @@
 ## Apps
 
 - [x] React with Next.js
-- [x] Vue with Vite
-- [x] Astro and Svelte
+- [x] Astro with Vite
 - [x] Tokio and Actix for Backend

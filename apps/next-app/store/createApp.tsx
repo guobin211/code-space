@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Patcher } from './createStore';
-import store, { AppContext, StoreValues } from './appStore';
-export const IS_SERVER = typeof window === 'undefined';
+import React, { useEffect, useState } from 'react'
+import { Patcher } from './createStore'
+import store, { AppContext, StoreValues } from './appStore'
+export const IS_SERVER = typeof window === 'undefined'
 /**
  * 创建一个store的provider
  * @param FC {React.FC}
@@ -9,51 +9,51 @@ export const IS_SERVER = typeof window === 'undefined';
  */
 export function createApp<P extends object>(FC: React.FC<P>) {
   const AppContextStore: React.FC<{
-    children: React.ReactNode;
+    children: React.ReactNode
   }> = (props) => {
-    const { children, ...rest } = props;
-    const [hasSync, setHasSync] = useState(IS_SERVER);
-    const [pageState, setPageState] = useState(rest);
+    const { children, ...rest } = props
+    const [hasSync, setHasSync] = useState(IS_SERVER)
+    const [pageState, setPageState] = useState(rest)
 
     const updateState = (updater: Patcher<P>) => {
-      setPageState((prev) => ({ ...prev, ...updater }));
-    };
+      setPageState((prev) => ({ ...prev, ...updater }))
+    }
 
     const listener = (state: object) => {
-      updateState(state);
-    };
+      updateState(state)
+    }
 
     useEffect(() => {
-      const subs = store.subscribe(listener);
+      const subs = store.subscribe(listener)
       return () => {
-        subs();
-      };
-    }, []);
+        subs()
+      }
+    }, [])
 
     useEffect(() => {
-      store.syncLocalState();
-      setHasSync(true);
-    }, []);
+      store.syncLocalState()
+      setHasSync(true)
+    }, [])
 
     const value = {
       ...pageState,
       updateState,
-    } as unknown as StoreValues;
+    } as unknown as StoreValues
 
     const adapterStyle = {
       display: hasSync && !IS_SERVER ? 'block' : 'none',
-    };
+    }
 
     return (
       <AppContext.Provider value={value}>
         <div style={adapterStyle}>{children}</div>
       </AppContext.Provider>
-    );
-  };
+    )
+  }
   const AppWithStore = (props: P) => (
     <AppContextStore {...props}>
       <FC {...props}></FC>
     </AppContextStore>
-  );
-  return AppWithStore;
+  )
+  return AppWithStore
 }

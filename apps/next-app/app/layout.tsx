@@ -1,8 +1,11 @@
-import AppHeader from '@/components/AppHeader';
-import React from 'react';
-import '../styles/globals.scss';
+import AppHeader from '@components/AppHeader'
+import React from 'react'
+import '../styles/globals.scss'
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  const state = AppHeader.getServerState()
+  console.log('RootLayout.AppHeader.state', state)
+
   return (
     <html>
       <head>
@@ -15,7 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </body>
     </html>
-  );
-};
+  )
+}
 
-export default RootLayout;
+export default RootLayout
