@@ -4,6 +4,7 @@ export class Cache {
   option: CacheOptions
   storage: Storage
   keys: Set<string>
+
   constructor(option: CacheOptions) {
     this.option = option
     switch (this.option.type) {
@@ -42,7 +43,9 @@ export class Cache {
     const res: Record<string, string | null> = {}
     this.keys.forEach((key) => {
       const value = this.storage.getItem(key)
-      res[key] = value
+      if (value) {
+        res[key] = value
+      }
     })
     return res
   }
@@ -55,23 +58,29 @@ export class Cache {
 class MemoryStorage implements Storage {
   data: Map<string, string>
   length: number
+
   constructor() {
     this.data = new Map()
     this.length = 0
   }
+
   clear(): void {
     this.data = new Map()
     this.length = 0
   }
+
   getItem(key: string): string | null {
     return this.data.get(key) || null
   }
+
   key(index: number): string | null {
     return Array.from(this.data.keys())[index] || null
   }
+
   removeItem(key: string): void {
     this.data.delete(key)
   }
+
   setItem(key: string, value: string): void {
     this.data.set(key, value)
   }

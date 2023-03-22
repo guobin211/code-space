@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Patcher } from './createStore'
 import store, { AppContext, StoreValues } from './appStore'
+
 export const IS_SERVER = typeof window === 'undefined'
+
 /**
  * 创建一个store的provider
  * @param FC {React.FC}
@@ -50,10 +52,14 @@ export function createApp<P extends object>(FC: React.FC<P>) {
       </AppContext.Provider>
     )
   }
+
   const AppWithStore = (props: P) => (
     <AppContextStore {...props}>
       <FC {...props}></FC>
     </AppContextStore>
   )
+
+  AppWithStore.dispalyName = 'AppWithStore'
+
   return AppWithStore
 }
