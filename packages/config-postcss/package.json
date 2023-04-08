@@ -1,9 +1,0 @@
-{
-  "name": "config-postcss",
-  "version": "1.0.0",
-  "dependencies": {
-    "autoprefixer": "^10",
-    "postcss": "^8",
-    "postcss-preset-env": "^6"
-  }
-}

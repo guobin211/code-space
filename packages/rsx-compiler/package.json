@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "author": "michaelbguo@tencent.com",
   "scripts": {
-    "clear": "rimraf node_modules",
+    "clear": "rm -rf ./node_modules",
     "upgrade": "pnpm update && cargo update"
   },
   "devDependencies": {
-    "config-ts": "workspace:0.0.0"
+    "config-ts": "workspace:*"
   }
 }

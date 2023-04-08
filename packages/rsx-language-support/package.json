@@ -3,6 +3,10 @@
   "displayName": "rsx",
   "description": "RSX Programming Language",
   "version": "0.0.1",
+  "scripts": {
+    "clear": "rm -rf ./node_modules",
+    "upgrade": "pnpm update && cargo update"
+  },
   "engines": {
     "vscode": "^1.72.0"
   },

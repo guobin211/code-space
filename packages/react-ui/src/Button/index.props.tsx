@@ -1,7 +1,7 @@
-import { ButtonHTMLAttributes, PropsWithChildren } from 'react'
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 export type ButtonProps = PropsWithChildren<
   ButtonHTMLAttributes<HTMLButtonElement> & {
-    size?: 'small' | 'medium' | 'large'
+    size?: 'small' | 'medium' | 'large';
   }
->
+>;

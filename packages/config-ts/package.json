@@ -6,7 +6,6 @@
   "files": [
     "global.d.ts",
     "base.json",
-    "nextjs.json",
     "node.json",
     "node.esm.json",
     "react.json",

@@ -54,4 +54,5 @@ yarn-error.log*
 .eslintcache
 *.node
 .vercel
+.astro
 apps/next-app/.vscode
