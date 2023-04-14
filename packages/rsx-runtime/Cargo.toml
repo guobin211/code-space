@@ -5,8 +5,7 @@ name = "rsx-runtime"
 version = "0.1.0"
 
 [dependencies]
-deno_core = "^0.174"
-json5 = "^0.4"
+deno_core = "^0.180"
 lazy_static = "^1.4.0"
 serde = { version = "^1", features = ["derive"] }
 serde_json = "^1"

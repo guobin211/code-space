@@ -21,7 +21,8 @@ pub async fn console_ok(s: String) {
 }
 // 运行js文件
 pub async fn run_js_file(filepath: &str) -> Result<(), AnyError> {
-    let main_module = deno_core::resolve_path(filepath)?;
+    let current_dir = std::env::current_dir()?;
+    let main_module = deno_core::resolve_path(filepath, &current_dir)?;
     // 扩展
     let extension = Extension::builder("deno:runtime:extensions/console")
         .ops(vec![
@@ -35,7 +36,7 @@ pub async fn run_js_file(filepath: &str) -> Result<(), AnyError> {
         extensions: vec![extension],
         ..Default::default()
     });
-    let runtime_code = include_str!("./v8_runtime.js");
+    let runtime_code = deno_core::FastString::Static(include_str!("./v8_runtime.js"));
     js_runtime
         .execute_script("[deno::runtime.js]", runtime_code)
         .unwrap();
@@ -47,10 +48,11 @@ pub async fn run_js_file(filepath: &str) -> Result<(), AnyError> {
 }
 
 // 运行js代码
-pub fn run_js_code(code: &str) {
+pub fn run_js_code(code: &'static str) {
     let option = RuntimeOptions::default();
     let mut js_runtime = JsRuntime::new(option);
-    let result = js_runtime.execute_script("index", &code);
+    let js_code = deno_core::FastString::Static(code);
+    let result = js_runtime.execute_script("index", js_code);
     match result {
         Ok(res) => {
             println!("\nrun script success");

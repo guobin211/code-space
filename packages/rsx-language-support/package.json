@@ -14,8 +14,8 @@
     "Programming Languages"
   ],
   "dependencies": {
-    "vscode-languageserver-textdocument": "^1",
-    "vscode-uri": "^3"
+    "vscode-languageserver-textdocument": "^1.0.8",
+    "vscode-uri": "^3.0.7"
   },
   "contributes": {
     "languages": [
