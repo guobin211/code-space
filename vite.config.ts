@@ -5,6 +5,7 @@ import pages from 'vite-plugin-pages';
 import topLevelAwait from 'vite-plugin-top-level-await';
 import wasm from 'vite-plugin-wasm';
 import { configDefaults, defineConfig } from 'vitest/config';
+import postcssPresetEnv from 'postcss-preset-env';
 
 const root = path.dirname(new URL(import.meta.url).pathname);
 
@@ -37,5 +38,10 @@ export default defineConfig({
   },
   worker: {
     plugins: [wasm(), topLevelAwait()],
+  },
+  css: {
+    postcss: {
+      plugins: [postcssPresetEnv()],
+    },
   },
 });

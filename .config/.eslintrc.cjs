@@ -5,21 +5,18 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended'
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
-  ignorePatterns: ['node_modules', 'dist', 'target', 'build'],
+  ignorePatterns: ['node_modules', 'dist', 'target', 'build', 'static', 'public'],
   rules: {
-    '@typescript-eslint/no-explicit-any': 'off'
-  }
+    '@typescript-eslint/no-explicit-any': 'off',
+  },
 };

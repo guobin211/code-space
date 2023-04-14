@@ -81,7 +81,11 @@ async function workHandle() {
   };
   const handleJob = (jobData) => {
     const result = job(jobData);
-    parentPort.postMessage({ type: WORKER_STATUS.FINISH, data: result, id: workerId });
+    parentPort.postMessage({
+      type: WORKER_STATUS.FINISH,
+      data: result,
+      id: workerId,
+    });
   };
   parentPort.on('message', handleInComingMessage);
 }

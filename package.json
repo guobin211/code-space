@@ -10,8 +10,8 @@
     "build": "vite build",
     "clear:all": "pnpm run --filter '*' clear && rimraf node_modules",
     "dev": "vite dev",
-    "format": "prettier --write \"**/*.{ts,tsx,js}\"",
-    "lint": "eslint --cache \"**/*.{ts,tsx,js}\" --fix",
+    "format": "node scripts/format.mjs",
+    "lint": "node scripts/eslint.mjs",
     "prepare": "husky install",
     "test": "vitest run",
     "test:all": "pnpm run --filter '*' test",
@@ -40,7 +40,9 @@
     "vitest": "^0.25.8"
   },
   "dependencies": {
+    "eslint-config-prettier": "^8.8.0",
     "normalize.css": "^8.0.1",
+    "postcss-preset-env": "^8.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.10.0",
