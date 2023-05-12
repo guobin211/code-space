@@ -9,9 +9,10 @@ mod generics {
     }
 
     pub fn make_array() {
-        let mut arr: Vec<Item> = Vec::new();
+        let mut arr: Vec<Item> = vec![];
         arr.push(Item::String(String::from("Hello")));
-        arr.push(Item::Number(3.14));
+        let n = 1.4;
+        arr.push(Item::Number(n));
         println!("{:?}", arr);
     }
 

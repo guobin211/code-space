@@ -7,6 +7,6 @@
     "upgrade": "pnpm update && cargo update"
   },
   "devDependencies": {
-    "config-ts": "workspace:*"
+    "typescript": "^5.0.4"
   }
 }

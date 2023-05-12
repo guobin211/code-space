@@ -6,9 +6,7 @@ type ResponseJson = {
 };
 
 async function fetchNews() {
-  const resp: ResponseJson = await fetch(
-    'https://user.guancha.cn/news-api/fengwen-good-questions.json'
-  )
+  const resp: ResponseJson = await fetch('https://user.guancha.cn/news-api/fengwen-good-questions.json')
     .then((res) => res.json())
     .catch(() => {
       // catch the error and return the default response

@@ -2,11 +2,7 @@ const ERROR = {
   NOT_SUPPORTED: 'XMLHttpRequest NOT SUPPORTED',
 };
 
-export function ajax(
-  { url, header, body, params, method, responseType, timeout },
-  onSuccess,
-  onError
-) {
+export function ajax({ url, header, body, params, method, responseType, timeout }, onSuccess, onError) {
   if (typeof XMLHttpRequest === 'undefined') {
     console.error(ERROR.NOT_SUPPORTED);
     onError && onError(ERROR.NOT_SUPPORTED);
