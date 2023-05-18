@@ -1,0 +1,12 @@
+[package]
+authors = ["michaelbguo <michaelbguo@tencent.com>"]
+edition = "2021"
+name = "rsx-compiler"
+version = "0.1.0"
+
+[dependencies]
+lazy_static = "^1.4.0"
+serde = { version = "^1", features = ["derive"] }
+serde_json = "^1"
+swc = "^0.260"
+tokio = { version = "^1", features = ["full"] }

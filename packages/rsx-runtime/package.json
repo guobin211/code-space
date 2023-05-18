@@ -1,0 +1,12 @@
+{
+  "name": "rsx-runtime",
+  "version": "0.1.0",
+  "author": "michaelbguo@tencent.com",
+  "scripts": {
+    "clear": "rm -rf ./node_modules",
+    "upgrade": "pnpm update && cargo update"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}

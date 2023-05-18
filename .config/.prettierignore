@@ -1,0 +1,13 @@
+node_modules
+target
+build
+dist
+public
+libs
+.next
+.vite
+.cache
+.turbo
+.vscode
+.idea
+

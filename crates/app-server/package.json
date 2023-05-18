@@ -1,8 +1,0 @@
-{
-  "name": "app-server",
-  "scripts": {
-    "dev": "cargo watch -x 'run --bin app-server'",
-    "build": "cargo build --release",
-    "upgrade": "pnpm update && cargo update"
-  }
-}

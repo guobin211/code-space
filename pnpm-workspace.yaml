@@ -1,4 +1,4 @@
 packages:
-  - "apps/*"
-  - "crates/*"
+  - "examples/*"
+  - "extensions/*"
   - "packages/*"

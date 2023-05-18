@@ -1,22 +1,15 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "module": "ESNext",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "moduleResolution": "node",
-    "noEmit": true,
-    "jsx": "preserve",
-  }
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@packages/*": [
+        "./packages/*"
+      ]
+    }
+  },
+  "exclude": [
+  ]
 }

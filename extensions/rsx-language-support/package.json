@@ -1,0 +1,42 @@
+{
+  "name": "rsx-language-support",
+  "displayName": "rsx",
+  "description": "RSX Programming Language",
+  "version": "0.0.1",
+  "scripts": {
+    "clear": "rm -rf node_modules",
+    "upgrade": "pnpm update && cargo update"
+  },
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "dependencies": {
+    "vscode-languageserver-textdocument": "^1.0.8",
+    "vscode-uri": "^3.0.7"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "rsx",
+        "aliases": [
+          "rsx",
+          "rsx"
+        ],
+        "extensions": [
+          "rsx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "rsx",
+        "scopeName": "source.rsx",
+        "path": "./syntaxes/rsx.tmLanguage.json"
+      }
+    ]
+  }
+}

@@ -1,5 +1,8 @@
 #![allow(dead_code)]
 
+use serde::Deserialize;
+use std::borrow::Cow;
+
 #[derive(Debug, Clone)]
 struct Chicken {
     name: String,
@@ -38,7 +41,20 @@ impl From<Egg> for Chicken {
     }
 }
 
-fn main() {}
+#[derive(Deserialize, Debug)]
+pub struct User<'a> {
+    #[serde(borrow)]
+    name: Cow<'a, str>,
+    age: i32,
+}
+
+fn main() {
+    let json = r#"{"name": "chicken", "age": 1}"#;
+    let mut user: User = serde_json::from_str(json).unwrap();
+    println!("{:?}", user);
+    user.name = Cow::Owned("egg".to_string());
+    println!("{:?}", user);
+}
 
 #[cfg(test)]
 mod tests {
