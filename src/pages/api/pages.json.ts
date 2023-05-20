@@ -1,5 +1,8 @@
 import type { APIRoute } from 'astro';
 
+/**
+ * http get: `/api/pages.json`
+ */
 export const get: APIRoute = ({ params, request }) => {
   const url = new URL(request.url);
   const search = new URLSearchParams(url.search);
@@ -14,7 +17,3 @@ export const get: APIRoute = ({ params, request }) => {
     }),
   };
 };
-
-export function redirect(link: string) {
-  return Response.redirect(link, 307);
-}
