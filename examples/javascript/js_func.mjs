@@ -89,17 +89,22 @@ export const printAwait = async () => {
 
 // ============================================================
 // 模拟ES6的类
-export function Body() {
+function Body() {
   this.className = 'Body';
 }
-export function Head() {
+
+function Head() {
   this.className = 'Head';
 }
+
 Body.prototype.getClassName = function () {
   console.log(`[className: ${this.className}]`);
 };
+
 // 模拟ES6的继承
 Head.prototype = new Body();
+
+export { Body, Head };
 
 // ES6实例化对象
 const instance = {
